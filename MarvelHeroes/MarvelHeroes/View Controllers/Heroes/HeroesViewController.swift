@@ -8,11 +8,12 @@
 
 import UIKit
 
-class HeroesViewController: UIViewController {
-
+class HeroesViewController: UIViewController, Loadable {
+	
 	// MARK: - Attributes
 	
 	@IBOutlet weak var tableView: UITableView!
+	var spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
 	var offset = 0
 	var heroes = [Hero]()
 	
@@ -22,6 +23,7 @@ class HeroesViewController: UIViewController {
 		super.viewDidLoad()
 		registerCell()
 		fetchHeroes()
+		configureSpinner()
 	}
 	
 	func registerCell() {
@@ -30,6 +32,7 @@ class HeroesViewController: UIViewController {
 	}
 	
 	func fetchHeroes() {
+		startLoading()
 		HeroService.fetchHeroes(offset) { result in
 			switch result {
 			case .success(let heroes):
@@ -39,6 +42,9 @@ class HeroesViewController: UIViewController {
 				}
 			case .failure(let error):
 				print(error)
+			}
+			DispatchQueue.main.async {
+				self.stopLoading()
 			}
 		}
 	}

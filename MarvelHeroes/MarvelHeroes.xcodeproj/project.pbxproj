@@ -25,6 +25,7 @@
 		3BC2B340209FA060003D91F4 /* HeroesViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B33F209FA060003D91F4 /* HeroesViewController+DataSource.swift */; };
 		3BC2B343209FA595003D91F4 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B342209FA595003D91F4 /* ImageService.swift */; };
 		3BC2B345209FAF37003D91F4 /* HeroesViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B344209FAF37003D91F4 /* HeroesViewController+Delegate.swift */; };
+		3BC2B348209FB2B3003D91F4 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B347209FB2B3003D91F4 /* Loadable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		3BC2B33F209FA060003D91F4 /* HeroesViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroesViewController+DataSource.swift"; sourceTree = "<group>"; };
 		3BC2B342209FA595003D91F4 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		3BC2B344209FAF37003D91F4 /* HeroesViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroesViewController+Delegate.swift"; sourceTree = "<group>"; };
+		3BC2B347209FB2B3003D91F4 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		3B124C2F209E26DB00C86DA0 /* MarvelHeroes */ = {
 			isa = PBXGroup;
 			children = (
+				3BC2B346209FB2A8003D91F4 /* Protocols */,
 				3BC2B341209FA50D003D91F4 /* Services */,
 				3BC2B33D209FA038003D91F4 /* View Controllers */,
 				3BC2B337209F91FD003D91F4 /* Views */,
@@ -222,6 +225,14 @@
 				3BC2B342209FA595003D91F4 /* ImageService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		3BC2B346209FB2A8003D91F4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3BC2B347209FB2B3003D91F4 /* Loadable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +372,7 @@
 				3BC2B345209FAF37003D91F4 /* HeroesViewController+Delegate.swift in Sources */,
 				3B124C33209E26DB00C86DA0 /* HeroesViewController.swift in Sources */,
 				3B124C67209E306A00C86DA0 /* Request.swift in Sources */,
+				3BC2B348209FB2B3003D91F4 /* Loadable.swift in Sources */,
 				3BC2B336209F84F8003D91F4 /* String+MD5.swift in Sources */,
 				3BC2B33B209F921C003D91F4 /* HeroTableViewCell.swift in Sources */,
 				3BC2B340209FA060003D91F4 /* HeroesViewController+DataSource.swift in Sources */,

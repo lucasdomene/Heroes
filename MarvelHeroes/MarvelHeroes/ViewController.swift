@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		HeroService.fetchHeroes(0)
 	}
 
 	override func didReceiveMemoryWarning() {

@@ -17,8 +17,9 @@ enum HeroAPI {
 	
 	// MARK: - Attributes
 	
-	static let baseURL = "https://gateway.marvel.com:443/v1/public/"
-	static let key = "86615064800735f7e97fc730d1515256"
+	static let baseURL = "https://gateway.marvel.com/v1/public/"
+	static let privateKey = "86615064800735f7e97fc730d1515256"
+	static let publicKey = "22026d7439253af65f68bb150eeaff3d2c5d9e79"
 	
 	// MARK: - Endpoints
 	
@@ -38,7 +39,7 @@ enum HeroAPI {
 	var path: String {
 		switch self {
 		case .heroes:
-			return "/characters"
+			return "characters"
 		}
 	}
 	
@@ -47,7 +48,9 @@ enum HeroAPI {
 	var parameters: [String: Any] {
 		switch self {
 		case .heroes(let offset):
-			return ["offset": offset, "limit": 20, "apiKey": HeroAPI.key]
+			//let ts = NSUUID().uuidString
+			//let hash = (ts + HeroAPI.privateKey + HeroAPI.publicKey).md5()
+			return ["offset": offset, "limit": 20, "apikey": HeroAPI.privateKey]
 		}
 	}
 	

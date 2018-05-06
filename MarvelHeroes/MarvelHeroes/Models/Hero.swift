@@ -8,11 +8,24 @@
 
 import Foundation
 
-struct Hero {
+struct Hero: Decodable {
 	
 	let id: Int
 	let name: String
-	let description: String
 	let thumbnail: Thumbnail
+	
+}
+
+extension Hero {
+	
+	init?(json: [String: Any]) {
+		guard let id = json["id"] as? Int,
+			let name = json["name"] as? String,
+			let thumbnailJSON = json["thumbnail"] as? [String: Any],
+			let thumbnail = Thumbnail(json: thumbnailJSON) else {
+				return nil
+		}
+		self.init(id: id, name: name, thumbnail: thumbnail)
+	}
 	
 }

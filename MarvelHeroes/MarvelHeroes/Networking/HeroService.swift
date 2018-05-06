@@ -25,11 +25,15 @@ class HeroService {
 			}
 			
 			do {
-				if let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String: Any] {
-					print(json)
+				if let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String: Any],
+				let data = json["data"] as? [String: Any],
+				let results = data["results"] as? [[String: Any]] {
+					let heroes = results.map { Hero(json: $0) }.compactMap { $0 }
+					print(heroes)
 				}
 			} catch {
-				
+				// TODO: - Error Handling
+				print(error)
 			}
 		}
 	}

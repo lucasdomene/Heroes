@@ -19,6 +19,7 @@
 		3B124C65209E2AA800C86DA0 /* HeroAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B124C64209E2AA800C86DA0 /* HeroAPI.swift */; };
 		3B124C67209E306A00C86DA0 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B124C66209E306A00C86DA0 /* Request.swift */; };
 		3BC2B331209F7F4E003D91F4 /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B330209F7F4E003D91F4 /* HeroService.swift */; };
+		3BC2B336209F84F8003D91F4 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B335209F84F8003D91F4 /* String+MD5.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		3B124C64209E2AA800C86DA0 /* HeroAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAPI.swift; sourceTree = "<group>"; };
 		3B124C66209E306A00C86DA0 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		3BC2B330209F7F4E003D91F4 /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
+		3BC2B332209F8494003D91F4 /* MarvelHeroes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarvelHeroes-Bridging-Header.h"; sourceTree = "<group>"; };
+		3BC2B335209F84F8003D91F4 /* String+MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 		3B124C68209E3A3200C86DA0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3BC2B332209F8494003D91F4 /* MarvelHeroes-Bridging-Header.h */,
+				3BC2B335209F84F8003D91F4 /* String+MD5.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				TargetAttributes = {
 					3B124C2C209E26DB00C86DA0 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					3B124C40209E26DD00C86DA0 = {
 						CreatedOnToolsVersion = 9.3;
@@ -298,6 +304,7 @@
 				3BC2B331209F7F4E003D91F4 /* HeroService.swift in Sources */,
 				3B124C33209E26DB00C86DA0 /* ViewController.swift in Sources */,
 				3B124C67209E306A00C86DA0 /* Request.swift in Sources */,
+				3BC2B336209F84F8003D91F4 /* String+MD5.swift in Sources */,
 				3B124C31209E26DB00C86DA0 /* AppDelegate.swift in Sources */,
 				3B124C62209E2A4800C86DA0 /* Thumbnail.swift in Sources */,
 				3B124C65209E2AA800C86DA0 /* HeroAPI.swift in Sources */,
@@ -474,6 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39NW3V2A95;
 				INFOPLIST_FILE = MarvelHeroes/Info.plist;
@@ -483,6 +491,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = domene.MarvelHeroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MarvelHeroes/Helpers/MarvelHeroes-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -492,6 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39NW3V2A95;
 				INFOPLIST_FILE = MarvelHeroes/Info.plist;
@@ -501,6 +512,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = domene.MarvelHeroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MarvelHeroes/Helpers/MarvelHeroes-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

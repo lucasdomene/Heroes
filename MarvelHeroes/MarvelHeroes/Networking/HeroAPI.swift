@@ -48,9 +48,9 @@ enum HeroAPI {
 	var parameters: [String: Any] {
 		switch self {
 		case .heroes(let offset):
-			//let ts = NSUUID().uuidString
-			//let hash = (ts + HeroAPI.privateKey + HeroAPI.publicKey).md5()
-			return ["offset": offset, "limit": 20, "apikey": HeroAPI.privateKey]
+			let ts = NSUUID().uuidString
+			let hash = (ts + HeroAPI.publicKey + HeroAPI.privateKey).md5()!
+			return ["offset": offset, "limit": 20, "apikey": HeroAPI.privateKey, "hash": hash, "ts": ts]
 		}
 	}
 	

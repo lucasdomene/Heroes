@@ -21,11 +21,8 @@ extension HeroesViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "HeroCell", for: indexPath) as! HeroTableViewCell
 		let hero = heroes[indexPath.row]
-		cell.nameLabel.text = hero.name
-		// TODO: - Set image placeHolder
-		if let url = URL(string: hero.thumbnail.fullPath) {
-			ImageService.setImage(withUrl: url, inImageView: cell.heroImage)
-		}
+		cell.clean()
+		cell.fill(withName: hero.name)
 		return cell
 	}
 	

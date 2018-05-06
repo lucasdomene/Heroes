@@ -24,6 +24,7 @@
 		3BC2B33C209F921C003D91F4 /* HeroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC2B33A209F921C003D91F4 /* HeroTableViewCell.xib */; };
 		3BC2B340209FA060003D91F4 /* HeroesViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B33F209FA060003D91F4 /* HeroesViewController+DataSource.swift */; };
 		3BC2B343209FA595003D91F4 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B342209FA595003D91F4 /* ImageService.swift */; };
+		3BC2B345209FAF37003D91F4 /* HeroesViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B344209FAF37003D91F4 /* HeroesViewController+Delegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		3BC2B33A209F921C003D91F4 /* HeroTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroTableViewCell.xib; sourceTree = "<group>"; };
 		3BC2B33F209FA060003D91F4 /* HeroesViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroesViewController+DataSource.swift"; sourceTree = "<group>"; };
 		3BC2B342209FA595003D91F4 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		3BC2B344209FAF37003D91F4 /* HeroesViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroesViewController+Delegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 			children = (
 				3B124C32209E26DB00C86DA0 /* HeroesViewController.swift */,
 				3BC2B33F209FA060003D91F4 /* HeroesViewController+DataSource.swift */,
+				3BC2B344209FAF37003D91F4 /* HeroesViewController+Delegate.swift */,
 			);
 			path = Heroes;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BC2B331209F7F4E003D91F4 /* HeroService.swift in Sources */,
+				3BC2B345209FAF37003D91F4 /* HeroesViewController+Delegate.swift in Sources */,
 				3B124C33209E26DB00C86DA0 /* HeroesViewController.swift in Sources */,
 				3B124C67209E306A00C86DA0 /* Request.swift in Sources */,
 				3BC2B336209F84F8003D91F4 /* String+MD5.swift in Sources */,

@@ -12,9 +12,9 @@ class Request {
 	
 	static let shared = Request()
 	private let session = URLSession(configuration: .default)
-	//typealias Response = ((Data?, URLResponse?, Error?) -> ())
+	typealias Response = ((Data?, URLResponse?, Error?) -> ())
 	
-	func run(urlRequest: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+	func run(urlRequest: URLRequest, completion: @escaping Response) {
 		session.dataTask(with: urlRequest) { data, response, error in
 			completion(data, response, error)
 		}.resume()

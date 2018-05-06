@@ -8,9 +8,14 @@
 
 import Foundation
 
+enum Result<T> {
+	case success(T)
+	case failure(Error)
+}
+
 class HeroService {
 	
-	class func fetchHeroes(_ offset: Int) {
+	class func fetchHeroes(_ offset: Int, completion: @escaping (Result<[Hero]>) -> Void) {
 		
 		Request.shared.run(urlRequest: HeroAPI.heroes(offset: offset).asURLRequest()) { data, response, error in
 			if error != nil {
@@ -29,7 +34,7 @@ class HeroService {
 				let data = json["data"] as? [String: Any],
 				let results = data["results"] as? [[String: Any]] {
 					let heroes = results.map { Hero(json: $0) }.compactMap { $0 }
-					print(heroes)
+					completion(.success(heroes))
 				}
 			} catch {
 				// TODO: - Error Handling

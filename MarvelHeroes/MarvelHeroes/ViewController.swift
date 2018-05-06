@@ -13,14 +13,15 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		HeroService.fetchHeroes(0)
+		HeroService.fetchHeroes(0) { result in
+			switch result {
+			case .success(let heroes):
+				print(heroes)
+			case .failure(let error):
+				print(error)
+			}
+		}
 	}
-
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
 
 }
 

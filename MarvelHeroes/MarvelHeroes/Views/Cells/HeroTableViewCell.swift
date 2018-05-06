@@ -23,10 +23,4 @@ class HeroTableViewCell: UITableViewCell {
 		// TODO: - Set image placeHolder
 	}
 	
-	func setImage(withImagePath imagePath: String) {
-		if let url = URL(string: imagePath) {
-			ImageService.setImage(withUrl: url, inImageView: heroImage)
-		}
-	}
-	
 }

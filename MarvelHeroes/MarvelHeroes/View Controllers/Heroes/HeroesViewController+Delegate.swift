@@ -13,7 +13,11 @@ extension HeroesViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 		let hero = heroes[indexPath.row]
 		(cell as? HeroTableViewCell)?.setImage(withImagePath: hero.thumbnail.fullPath)
+		
+		if indexPath.row > heroes.count - 5 {
+			offset += 20
+			fetchHeroes()
+		}
 	}
-	
 	
 }

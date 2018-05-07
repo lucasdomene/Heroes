@@ -85,17 +85,26 @@
                                     <constraint firstAttribute="height" constant="300" id="LZl-9q-QqO"/>
                                 </constraints>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OqN-mP-gOu">
+                                <rect key="frame" x="0.0" y="364" width="375" height="303"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="N2V-cK-BNG" firstAttribute="bottom" secondItem="OqN-mP-gOu" secondAttribute="bottom" id="CAE-oS-c4o"/>
                             <constraint firstItem="BCG-bz-Ukd" firstAttribute="leading" secondItem="N2V-cK-BNG" secondAttribute="leading" id="ezW-Ov-HwG"/>
+                            <constraint firstItem="OqN-mP-gOu" firstAttribute="leading" secondItem="N2V-cK-BNG" secondAttribute="leading" id="hyn-ha-fRh"/>
                             <constraint firstItem="BCG-bz-Ukd" firstAttribute="top" secondItem="N2V-cK-BNG" secondAttribute="top" id="ovp-M7-Td8"/>
+                            <constraint firstItem="OqN-mP-gOu" firstAttribute="top" secondItem="BCG-bz-Ukd" secondAttribute="bottom" id="pwp-bP-KTP"/>
+                            <constraint firstItem="N2V-cK-BNG" firstAttribute="trailing" secondItem="OqN-mP-gOu" secondAttribute="trailing" id="sa1-7g-YDk"/>
                             <constraint firstItem="N2V-cK-BNG" firstAttribute="trailing" secondItem="BCG-bz-Ukd" secondAttribute="trailing" id="zyL-AI-Fvr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N2V-cK-BNG"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="BCG-bz-Ukd" id="1Rk-dO-tgD"/>
+                        <outlet property="tableView" destination="OqN-mP-gOu" id="7Eg-kG-hnX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mje-lD-X0n" userLabel="First Responder" sceneMemberID="firstResponder"/>

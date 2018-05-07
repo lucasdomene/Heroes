@@ -11,10 +11,12 @@ import UIKit
 class DetailsViewController: UIViewController {
 	
 	@IBOutlet weak var imageView: UIImageView!
+	@IBOutlet weak var tableView: UITableView!
 	
 	var hero: Hero!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		tableView.tableFooterView = UIView()
 	}
 }

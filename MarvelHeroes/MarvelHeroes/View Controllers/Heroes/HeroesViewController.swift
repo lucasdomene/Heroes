@@ -15,6 +15,7 @@ class HeroesViewController: UIViewController, Loadable {
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var favoritesButton: UIBarButtonItem!
+	@IBOutlet weak var searchBarHeight: NSLayoutConstraint!
 	
 	let imageService = ImageService()
 	var spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
@@ -48,6 +49,11 @@ class HeroesViewController: UIViewController, Loadable {
 		emptyLabel?.isHidden = !(FavoritesService.favorites.isEmpty && isFavoritesActive)
 		if !FavoritesService.favorites.isEmpty && isFavoritesActive {
 			tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+		}
+		
+		searchBarHeight.constant = isFavoritesActive ? 0 : 56
+		UIView.animate(withDuration: 0.5) {
+			self.view.layoutIfNeeded()
 		}
 	}
 	

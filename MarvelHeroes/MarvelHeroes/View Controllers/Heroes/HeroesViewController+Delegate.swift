@@ -42,6 +42,10 @@ extension HeroesViewController: UITableViewDelegate {
 		tableView.beginUpdates()
 		tableView.deleteRows(at: [indexPath], with: .automatic)
 		tableView.endUpdates()
+		
+		if FavoritesService.favorites.isEmpty {
+			emptyLabel?.isHidden = false
+		}
 	}
 	
 }

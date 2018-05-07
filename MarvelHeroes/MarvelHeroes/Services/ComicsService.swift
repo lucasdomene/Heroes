@@ -10,11 +10,8 @@ import Foundation
 
 class ComicsService {
 	
-	//class func fetchComics(_ offset: Int, heroID: String, completion: @escaping ())
-	
-	class func fetchHeroes(_ offset: Int, name: String? = nil, completion: @escaping (Result<[Hero]>) -> Void) {
-		
-		Request.shared.run(urlRequest: HeroAPI.heroes(offset: offset, name: name).asURLRequest()) { data, response, error in
+	class func fetchComics(_ offset: Int, heroID: String, completion: @escaping (Result<[Comic]>) -> Void) {
+		Request.shared.run(urlRequest: HeroAPI.comics(offset: offset, heroID: heroID).asURLRequest()) { data, response, error in
 			if error != nil {
 				print("ERROR")
 				// TODO: - Error Handling
@@ -30,13 +27,14 @@ class ComicsService {
 				if let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String: Any],
 					let data = json["data"] as? [String: Any],
 					let results = data["results"] as? [[String: Any]] {
-					let heroes = results.map { Hero(json: $0) }.compactMap { $0 }
-					completion(.success(heroes))
+					let comics = results.map { Comic(json: $0) }.compactMap { $0 }
+					completion(.success(comics))
 				}
 			} catch {
 				// TODO: - Error Handling
 				print(error)
 			}
+			
 		}
 	}
 	

@@ -80,6 +80,13 @@ class HeroesViewController: UIViewController, UINavigationControllerDelegate, Lo
 		}
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "showDetails" {
+			let destinationViewController = segue.destination as! DetailsViewController
+			destinationViewController.hero = selectedHero
+		}
+	}
+	
 	public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 		guard let frame = selectedFrame else { return nil }
 		guard let heroImage = selectedHeroImage else { return nil }

@@ -18,5 +18,14 @@ class DetailsViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.tableFooterView = UIView()
+		
+		ComicsService.fetchComics(0, heroID: String(hero.id)) { result in
+			switch result {
+			case .success(let comics):
+				print(comics)
+			case .failure(let error):
+				print(error)
+			}
+		}
 	}
 }

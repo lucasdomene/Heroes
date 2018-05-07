@@ -7,3 +7,30 @@
 //
 
 import Foundation
+
+struct Story {
+	
+	let id: Int
+	let title: String
+	let thumbnail: Thumbnail?
+	
+}
+
+extension Story: Parseable {
+	
+	init?(json: [String: Any]) {
+		guard let id = json["id"] as? Int,
+			let title = json["title"] as? String else {
+				return nil
+		}
+		
+		var thumbnail: Thumbnail?
+		if let thumbnailJSON = json["thumbnail"] as? [String: Any],
+			let downloadedThumbnail = Thumbnail(json: thumbnailJSON) {
+			thumbnail = downloadedThumbnail
+		}
+		
+		self.init(id: id, title: title, thumbnail: thumbnail)
+	}
+	
+}

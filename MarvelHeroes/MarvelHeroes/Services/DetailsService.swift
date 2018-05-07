@@ -45,8 +45,12 @@ class DetailsService {
 	private class func urlRequest<T: Parseable>(forType type: T.Type, offset: Int, heroID: String) -> URLRequest {
 		if type is Comic.Type {
 			return HeroAPI.comics(offset: offset, heroID: heroID).asURLRequest()
+		} else if type is Event.Type {
+			return HeroAPI.events(offset: offset, heroID: heroID).asURLRequest()
+		} else if type is Serie.Type {
+			return HeroAPI.series(offset: offset, heroID: heroID).asURLRequest()
 		}
-		return HeroAPI.comics(offset: offset, heroID: heroID).asURLRequest()
+		return HeroAPI.stories(offset: offset, heroID: heroID).asURLRequest()
 	}
 	
 }

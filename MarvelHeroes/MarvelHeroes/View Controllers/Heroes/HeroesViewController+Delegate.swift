@@ -25,7 +25,7 @@ extension HeroesViewController: UITableViewDelegate {
 			return
 		}
 		
-		if let url = URL(string: hero.thumbnail.fullPath) {
+		if let imagePath = hero.thumbnail?.fullPath, let url = URL(string: imagePath) {
 			imageService.downloadImage(fromURL: url) { image in
 				self.imageService.setImage(image: image, forkey: String(hero.id))
 				DispatchQueue.main.async {

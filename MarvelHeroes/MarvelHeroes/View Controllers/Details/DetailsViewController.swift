@@ -19,14 +19,13 @@ class DetailsViewController: UIViewController {
 		super.viewDidLoad()
 		tableView.tableFooterView = UIView()
 		
-		DetailsService.fetchDetails(type: Comic.self, offset: 0, heroID: String(hero.id)) { result in
+		DetailsService.fetchDetails(type: Serie.self, offset: 0, heroID: String(hero.id)) { result in
 			switch result {
 			case .success(let comics):
 				print(comics)
 			case .failure(let error):
 				print(error)
 			}
-
 		}
 		
 	}

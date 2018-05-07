@@ -12,7 +12,7 @@ struct Hero: Codable {
 	
 	let id: Int
 	let name: String
-	let thumbnail: Thumbnail
+	let thumbnail: Thumbnail?
 	
 }
 
@@ -26,11 +26,16 @@ extension Hero: Parseable {
 	
 	init?(json: [String: Any]) {
 		guard let id = json["id"] as? Int,
-			let name = json["name"] as? String,
-			let thumbnailJSON = json["thumbnail"] as? [String: Any],
-			let thumbnail = Thumbnail(json: thumbnailJSON) else {
+			let name = json["name"] as? String else {
 				return nil
 		}
+		
+		var thumbnail: Thumbnail?
+		if let thumbnailJSON = json["thumbnail"] as? [String: Any],
+			let downloadedThumbnail = Thumbnail(json: thumbnailJSON) {
+			thumbnail = downloadedThumbnail
+		}
+		
 		self.init(id: id, name: name, thumbnail: thumbnail)
 	}
 	

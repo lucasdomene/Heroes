@@ -12,7 +12,7 @@ struct Comic {
 	
 	let id: Int
 	let title: String
-	let thumbnail: Thumbnail
+	let thumbnail: Thumbnail?
 	
 }
 
@@ -20,11 +20,16 @@ extension Comic: Parseable {
 	
 	init?(json: [String: Any]) {
 		guard let id = json["id"] as? Int,
-			let title = json["title"] as? String,
-			let thumbnailJSON = json["thumbnail"] as? [String: Any],
-			let thumbnail = Thumbnail(json: thumbnailJSON) else {
+			let title = json["title"] as? String else {
 				return nil
 		}
+		
+		var thumbnail: Thumbnail?
+		if let thumbnailJSON = json["thumbnail"] as? [String: Any],
+			let downloadedThumbnail = Thumbnail(json: thumbnailJSON) {
+			thumbnail = downloadedThumbnail
+		}
+		
 		self.init(id: id, title: title, thumbnail: thumbnail)
 	}
 	

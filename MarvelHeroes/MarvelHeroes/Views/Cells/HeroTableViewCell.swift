@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol FavoriteProtocol: class {
+	func didRemoveHero(atIndexPath indexPath: IndexPath)
+}
+
 class HeroTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var heroImage: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var favoriteImageView: UIImageView!
+	weak var delegate: FavoriteProtocol?
 	
 	var hero: Hero? {
 		didSet {
@@ -40,9 +45,16 @@ class HeroTableViewCell: UITableViewCell {
 	
 	@objc func favoritePressed() {
 		if let hero = hero {
+			var indexPath: IndexPath?
+			if let row = FavoritesService.favorites.index(of: hero) {
+				indexPath = IndexPath(row: row, section: 0)
+			}
 			let isFavorite = FavoritesService.isFavorite(hero)
 			isFavorite ? FavoritesService.remove(hero) : FavoritesService.add(hero)
 			setFavorite(!isFavorite)
+			if let indexPath = indexPath, isFavorite {
+				delegate?.didRemoveHero(atIndexPath: indexPath)
+			}
 		}
 	}
 	

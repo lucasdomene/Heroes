@@ -15,6 +15,11 @@ extension HeroesViewController: UITableViewDelegate {
 		cell.tag = indexPath.row
 		let hero = heroes[indexPath.row]
 		
+		if indexPath.row > heroes.count - 2 && heroes.count > 5 {
+			offset += 20
+			fetchHeroes()
+		}
+		
 		if let image = imageService.imageForKey(key: String(hero.id)) {
 			(cell as? HeroTableViewCell)?.heroImage.image = image
 			return
@@ -31,10 +36,12 @@ extension HeroesViewController: UITableViewDelegate {
 			}
 		}
 		
-		if indexPath.row > heroes.count - 2 && heroes.count > 5 {
-			offset += 20
-			fetchHeroes()
-		}
+	}
+	
+	func didRemoveHero(atIndexPath indexPath: IndexPath) {
+		tableView.beginUpdates()
+		tableView.deleteRows(at: [indexPath], with: .automatic)
+		tableView.endUpdates()
 	}
 	
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension HeroesViewController: UITableViewDataSource {
+extension HeroesViewController: UITableViewDataSource, FavoriteProtocol {
 
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
@@ -22,6 +22,7 @@ extension HeroesViewController: UITableViewDataSource {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "HeroCell", for: indexPath) as! HeroTableViewCell
 		let hero = isFavoritesActive ? FavoritesService.favorites[indexPath.row] : heroes[indexPath.row]
 		cell.clean()
+		cell.delegate = self
 		cell.hero = hero
 		return cell
 	}

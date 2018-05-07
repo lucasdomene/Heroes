@@ -15,7 +15,7 @@ extension HeroesViewController: UITableViewDelegate {
 		cell.tag = indexPath.row
 		let hero = heroes[indexPath.row]
 		
-		if indexPath.row > heroes.count - 2 && heroes.count > 5 {
+		if indexPath.row > heroes.count - 2 && heroes.count > 5 && !isFavoritesActive {
 			offset += 20
 			fetchHeroes()
 		}
@@ -35,17 +35,15 @@ extension HeroesViewController: UITableViewDelegate {
 				}
 			}
 		}
-		
 	}
 	
 	func didRemoveHero(atIndexPath indexPath: IndexPath) {
-		tableView.beginUpdates()
-		tableView.deleteRows(at: [indexPath], with: .automatic)
-		tableView.endUpdates()
-		
-		if FavoritesService.favorites.isEmpty {
-			emptyLabel?.isHidden = false
+		if isFavoritesActive {
+			tableView.beginUpdates()
+			tableView.deleteRows(at: [indexPath], with: .automatic)
+			tableView.endUpdates()
 		}
+		emptyLabel?.isHidden = !(FavoritesService.favorites.isEmpty && isFavoritesActive)
 	}
 	
 }

@@ -15,4 +15,23 @@ extension DetailsViewController: UITableViewDelegate {
 		detailsTableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.section)
 	}
 	
+	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+		(view as! UITableViewHeaderFooterView).backgroundView?.backgroundColor = UIColor.red
+		(view as! UITableViewHeaderFooterView).textLabel?.textColor = UIColor.white
+	}
+	
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		switch section {
+		case Sections.comics.rawValue:
+			return "Comics"
+		case Sections.events.rawValue:
+			return "Events"
+		case Sections.series.rawValue:
+			return "Series"
+		case Sections.stories.rawValue:
+			return "Stories"
+		default:
+			return ""
+		}
+	}
 }

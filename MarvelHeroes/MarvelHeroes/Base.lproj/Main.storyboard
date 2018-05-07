@@ -81,13 +81,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BCG-bz-Ukd">
-                                <rect key="frame" x="5" y="69" width="365" height="300"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="LZl-9q-QqO"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OqN-mP-gOu">
-                                <rect key="frame" x="0.0" y="374" width="375" height="293"/>
+                                <rect key="frame" x="0.0" y="364" width="375" height="303"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -156,12 +156,12 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="N2V-cK-BNG" firstAttribute="bottom" secondItem="OqN-mP-gOu" secondAttribute="bottom" id="CAE-oS-c4o"/>
-                            <constraint firstItem="BCG-bz-Ukd" firstAttribute="leading" secondItem="N2V-cK-BNG" secondAttribute="leading" constant="5" id="ezW-Ov-HwG"/>
+                            <constraint firstItem="BCG-bz-Ukd" firstAttribute="leading" secondItem="N2V-cK-BNG" secondAttribute="leading" id="ezW-Ov-HwG"/>
                             <constraint firstItem="OqN-mP-gOu" firstAttribute="leading" secondItem="N2V-cK-BNG" secondAttribute="leading" id="hyn-ha-fRh"/>
-                            <constraint firstItem="BCG-bz-Ukd" firstAttribute="top" secondItem="N2V-cK-BNG" secondAttribute="top" constant="5" id="ovp-M7-Td8"/>
-                            <constraint firstItem="OqN-mP-gOu" firstAttribute="top" secondItem="BCG-bz-Ukd" secondAttribute="bottom" constant="5" id="pwp-bP-KTP"/>
+                            <constraint firstItem="BCG-bz-Ukd" firstAttribute="top" secondItem="N2V-cK-BNG" secondAttribute="top" id="ovp-M7-Td8"/>
+                            <constraint firstItem="OqN-mP-gOu" firstAttribute="top" secondItem="BCG-bz-Ukd" secondAttribute="bottom" id="pwp-bP-KTP"/>
                             <constraint firstItem="N2V-cK-BNG" firstAttribute="trailing" secondItem="OqN-mP-gOu" secondAttribute="trailing" id="sa1-7g-YDk"/>
-                            <constraint firstItem="N2V-cK-BNG" firstAttribute="trailing" secondItem="BCG-bz-Ukd" secondAttribute="trailing" constant="5" id="zyL-AI-Fvr"/>
+                            <constraint firstItem="N2V-cK-BNG" firstAttribute="trailing" secondItem="BCG-bz-Ukd" secondAttribute="trailing" id="zyL-AI-Fvr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N2V-cK-BNG"/>
                     </view>

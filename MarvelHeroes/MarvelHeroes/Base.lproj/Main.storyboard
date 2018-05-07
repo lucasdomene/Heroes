@@ -52,6 +52,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Marvel" id="RNe-DT-Hgf">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Qft-Es-0II"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="favorites" id="gY2-pt-hvL">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -80,20 +81,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BCG-bz-Ukd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
+                                <rect key="frame" x="5" y="69" width="365" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="LZl-9q-QqO"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OqN-mP-gOu">
-                                <rect key="frame" x="0.0" y="364" width="375" height="303"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OqN-mP-gOu">
+                                <rect key="frame" x="0.0" y="374" width="375" height="293"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailsCell" id="Hda-rt-IgB" customClass="DetailsTableViewCell" customModule="MarvelHeroes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hda-rt-IgB" id="Cn3-hd-Imo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3yh-Vb-LOX">
@@ -138,6 +139,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="3yh-Vb-LOX" secondAttribute="bottom" id="udr-yT-UnR"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="collectionView" destination="3yh-Vb-LOX" id="iQK-wo-cII"/>
                                         </connections>
@@ -149,15 +151,15 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="N2V-cK-BNG" firstAttribute="bottom" secondItem="OqN-mP-gOu" secondAttribute="bottom" id="CAE-oS-c4o"/>
-                            <constraint firstItem="BCG-bz-Ukd" firstAttribute="leading" secondItem="N2V-cK-BNG" secondAttribute="leading" id="ezW-Ov-HwG"/>
+                            <constraint firstItem="BCG-bz-Ukd" firstAttribute="leading" secondItem="N2V-cK-BNG" secondAttribute="leading" constant="5" id="ezW-Ov-HwG"/>
                             <constraint firstItem="OqN-mP-gOu" firstAttribute="leading" secondItem="N2V-cK-BNG" secondAttribute="leading" id="hyn-ha-fRh"/>
-                            <constraint firstItem="BCG-bz-Ukd" firstAttribute="top" secondItem="N2V-cK-BNG" secondAttribute="top" id="ovp-M7-Td8"/>
-                            <constraint firstItem="OqN-mP-gOu" firstAttribute="top" secondItem="BCG-bz-Ukd" secondAttribute="bottom" id="pwp-bP-KTP"/>
+                            <constraint firstItem="BCG-bz-Ukd" firstAttribute="top" secondItem="N2V-cK-BNG" secondAttribute="top" constant="5" id="ovp-M7-Td8"/>
+                            <constraint firstItem="OqN-mP-gOu" firstAttribute="top" secondItem="BCG-bz-Ukd" secondAttribute="bottom" constant="5" id="pwp-bP-KTP"/>
                             <constraint firstItem="N2V-cK-BNG" firstAttribute="trailing" secondItem="OqN-mP-gOu" secondAttribute="trailing" id="sa1-7g-YDk"/>
-                            <constraint firstItem="N2V-cK-BNG" firstAttribute="trailing" secondItem="BCG-bz-Ukd" secondAttribute="trailing" id="zyL-AI-Fvr"/>
+                            <constraint firstItem="N2V-cK-BNG" firstAttribute="trailing" secondItem="BCG-bz-Ukd" secondAttribute="trailing" constant="5" id="zyL-AI-Fvr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N2V-cK-BNG"/>
                     </view>
@@ -178,6 +180,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CJL-WA-AKn">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

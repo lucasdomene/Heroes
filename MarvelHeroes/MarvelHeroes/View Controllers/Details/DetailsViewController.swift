@@ -29,6 +29,11 @@ class DetailsViewController: UIViewController {
 		tableView.tableFooterView = UIView()
 		initDetails()
 		tableView.reloadData()
+		fetchDetails()
+		navigationItem.title = hero.name
+	}
+	
+	func fetchDetails() {
 		fetchComics()
 		fetchEvents()
 		fetchSeries()
@@ -44,7 +49,7 @@ class DetailsViewController: UIViewController {
 	func fetchComics() {
 		let indexPath = IndexPath(row: 0, section: Sections.comics.rawValue)
 		let cell = tableView.cellForRow(at: indexPath)
-		(cell as! DetailsTableViewCell).spinner.startAnimating()
+		(cell as? DetailsTableViewCell)?.spinner.startAnimating()
 		DetailsService.fetchDetails(type: Comic.self, heroID: String(hero.id)) { result in
 			switch result {
 			case .success(let comics):
@@ -56,7 +61,7 @@ class DetailsViewController: UIViewController {
 				print(error)
 			}
 			DispatchQueue.main.async {
-				(cell as! DetailsTableViewCell).spinner.stopAnimating()
+				(cell as? DetailsTableViewCell)?.spinner.stopAnimating()
 			}
 		}
 	}
@@ -64,7 +69,7 @@ class DetailsViewController: UIViewController {
 	func fetchEvents() {
 		let indexPath = IndexPath(row: 0, section: Sections.events.rawValue)
 		let cell = tableView.cellForRow(at: indexPath)
-		(cell as! DetailsTableViewCell).spinner.startAnimating()
+		(cell as? DetailsTableViewCell)?.spinner.startAnimating()
 		DetailsService.fetchDetails(type: Event.self, heroID: String(hero.id)) { result in
 			switch result {
 			case .success(let events):
@@ -76,7 +81,7 @@ class DetailsViewController: UIViewController {
 				print(error)
 			}
 			DispatchQueue.main.async {
-				(cell as! DetailsTableViewCell).spinner.stopAnimating()
+				(cell as? DetailsTableViewCell)?.spinner.stopAnimating()
 			}
 		}
 	}
@@ -84,7 +89,7 @@ class DetailsViewController: UIViewController {
 	func fetchSeries() {
 		let indexPath = IndexPath(row: 0, section: Sections.series.rawValue)
 		let cell = tableView.cellForRow(at: indexPath)
-		(cell as! DetailsTableViewCell).spinner.startAnimating()
+		(cell as? DetailsTableViewCell)?.spinner.startAnimating()
 		DetailsService.fetchDetails(type: Serie.self, heroID: String(hero.id)) { result in
 			switch result {
 			case .success(let series):
@@ -96,7 +101,7 @@ class DetailsViewController: UIViewController {
 				print(error)
 			}
 			DispatchQueue.main.async {
-				(cell as! DetailsTableViewCell).spinner.stopAnimating()
+				(cell as? DetailsTableViewCell)?.spinner.stopAnimating()
 			}
 		}
 	}
@@ -104,7 +109,7 @@ class DetailsViewController: UIViewController {
 	func fetchStories() {
 		let indexPath = IndexPath(row: 0, section: Sections.stories.rawValue)
 		let cell = tableView.cellForRow(at: indexPath)
-		(cell as! DetailsTableViewCell).spinner.startAnimating()
+		(cell as? DetailsTableViewCell)?.spinner.startAnimating()
 		DetailsService.fetchDetails(type: Story.self, heroID: String(hero.id)) { result in
 			switch result {
 			case .success(let stories):
@@ -116,7 +121,7 @@ class DetailsViewController: UIViewController {
 				print(error)
 			}
 			DispatchQueue.main.async {
-				(cell as! DetailsTableViewCell).spinner.stopAnimating()
+				(cell as? DetailsTableViewCell)?.spinner.stopAnimating()
 			}
 		}
 	}

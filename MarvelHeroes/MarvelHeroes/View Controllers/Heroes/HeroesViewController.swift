@@ -20,7 +20,6 @@ class HeroesViewController: UIViewController, Loadable {
 	var emptyLabel: UILabel?
 	var offset = 0
 	var heroes = [Hero]()
-	var favorites = [Hero]()
 	var isSearchActive = false
 	var isFavoritesActive = false
 	
@@ -44,7 +43,7 @@ class HeroesViewController: UIViewController, Loadable {
 		isFavoritesActive = !isFavoritesActive
 		favoritesButton.image = isFavoritesActive ? #imageLiteral(resourceName: "close") : #imageLiteral(resourceName: "favorites")
 		tableView.reloadData()
-		emptyLabel?.isHidden = !(favorites.isEmpty && isFavoritesActive)
+		emptyLabel?.isHidden = !(FavoritesService.favorites.isEmpty && isFavoritesActive)
 	}
 	
 	func fetchHeroes(name: String? = nil) {

@@ -21,4 +21,8 @@ class FavoritesService {
 		favorites = favorites.filter { $0.id != hero.id }
 	}
 	
+	class func isFavorite(_ hero: Hero) -> Bool {
+		return favorites.contains(hero)
+	}
+	
 }

@@ -22,7 +22,7 @@ extension HeroesViewController: UITableViewDataSource {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "HeroCell", for: indexPath) as! HeroTableViewCell
 		let hero = isFavoritesActive ? FavoritesService.favorites[indexPath.row] : heroes[indexPath.row]
 		cell.clean()
-		cell.fill(withName: hero.name)
+		cell.hero = hero
 		return cell
 	}
 	

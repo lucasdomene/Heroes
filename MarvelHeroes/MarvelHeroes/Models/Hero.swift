@@ -16,6 +16,12 @@ struct Hero: Decodable {
 	
 }
 
+extension Hero: Equatable {
+	public static func == (lhs: Hero, rhs: Hero) -> Bool {
+		return lhs.id == rhs.id
+	}
+}
+
 extension Hero {
 	
 	init?(json: [String: Any]) {

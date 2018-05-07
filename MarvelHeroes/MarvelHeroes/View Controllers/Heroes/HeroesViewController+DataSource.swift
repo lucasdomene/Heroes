@@ -15,12 +15,12 @@ extension HeroesViewController: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return heroes.count
+		return isFavoritesActive ? FavoritesService.favorites.count : heroes.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "HeroCell", for: indexPath) as! HeroTableViewCell
-		let hero = heroes[indexPath.row]
+		let hero = isFavoritesActive ? FavoritesService.favorites[indexPath.row] : heroes[indexPath.row]
 		cell.clean()
 		cell.fill(withName: hero.name)
 		return cell

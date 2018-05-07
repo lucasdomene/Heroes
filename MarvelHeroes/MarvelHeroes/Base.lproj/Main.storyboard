@@ -48,8 +48,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Marvel" id="RNe-DT-Hgf"/>
+                    <navigationItem key="navigationItem" title="Marvel" id="RNe-DT-Hgf">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="favorites" id="gY2-pt-hvL">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="favoritesPressed:" destination="BYZ-38-t0r" id="YFj-rB-hVv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="favoritesButton" destination="gY2-pt-hvL" id="RRX-i7-EIj"/>
                         <outlet property="searchBar" destination="ZAX-TH-qTs" id="u4V-uJ-GxR"/>
                         <outlet property="tableView" destination="bp4-eD-EIb" id="zRf-r0-W07"/>
                     </connections>
@@ -81,4 +89,7 @@
             <point key="canvasLocation" x="133.59999999999999" y="-564.46776611694156"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="favorites" width="50" height="50"/>
+    </resources>
 </document>

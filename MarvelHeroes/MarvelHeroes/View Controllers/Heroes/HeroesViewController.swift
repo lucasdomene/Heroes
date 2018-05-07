@@ -14,14 +14,17 @@ class HeroesViewController: UIViewController, Loadable {
 	
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var searchBar: UISearchBar!
+	@IBOutlet weak var favoritesButton: UIBarButtonItem!
 	
 	var spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
 	var emptyLabel: UILabel?
 	var offset = 0
 	var heroes = [Hero]()
+	var favorites = [Hero]()
 	var isSearchActive = false
+	var isFavoritesActive = false
 	
-	// MARK: - Attributes
+	// MARK: - View life cycle
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -35,6 +38,13 @@ class HeroesViewController: UIViewController, Loadable {
 	func registerCell() {
 		let nib = UINib(nibName: "HeroTableViewCell", bundle: nil)
 		tableView.register(nib, forCellReuseIdentifier: "HeroCell")
+	}
+	
+	@IBAction func favoritesPressed(_ sender: UIBarButtonItem) {
+		isFavoritesActive = !isFavoritesActive
+		favoritesButton.image = isFavoritesActive ? #imageLiteral(resourceName: "close") : #imageLiteral(resourceName: "favorites")
+		tableView.reloadData()
+		emptyLabel?.isHidden = !(favorites.isEmpty && isFavoritesActive)
 	}
 	
 	func fetchHeroes(name: String? = nil) {

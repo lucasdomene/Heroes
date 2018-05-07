@@ -11,6 +11,7 @@ import UIKit
 extension HeroesViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+		let heroes = isFavoritesActive ? FavoritesService.favorites : self.heroes
 		cell.tag = indexPath.row
 		let hero = heroes[indexPath.row]
 		if let url = URL(string: hero.thumbnail.fullPath) {

@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Story {
+struct Story: Detailable {
 	
-	let id: Int
-	let title: String
-	let thumbnail: Thumbnail?
+	var id: Int
+	var title: String
+	var thumbnail: Thumbnail?
 	
 }
 

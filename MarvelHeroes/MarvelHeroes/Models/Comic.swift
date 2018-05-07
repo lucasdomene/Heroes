@@ -8,11 +8,17 @@
 
 import Foundation
 
-struct Comic {
+protocol Detailable {
+	var id: Int { get set }
+	var title: String { get set }
+	var thumbnail: Thumbnail? { get set }
+}
+
+struct Comic: Detailable {
 	
-	let id: Int
-	let title: String
-	let thumbnail: Thumbnail?
+	var id: Int
+	var title: String
+	var thumbnail: Thumbnail?
 	
 }
 

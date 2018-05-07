@@ -14,7 +14,8 @@ class DetailsViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	
 	var hero: Hero!
-	var details = [[Any]]()
+	var details = [[Detailable]]()
+	let imageService = ImageService()
 	
 	enum Sections: Int {
 		case comics = 0

@@ -106,13 +106,27 @@
                                                         <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailsCollectionCell" id="1ac-Wq-As2">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailsCollectionCell" id="1ac-Wq-As2" customClass="DetailsCollectionViewCell" customModule="MarvelHeroes" customModuleProvider="target">
                                                             <rect key="frame" x="5" y="5" width="70" height="90"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TRo-yH-A9o">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
+                                                                    </imageView>
+                                                                </subviews>
                                                             </view>
+                                                            <constraints>
+                                                                <constraint firstItem="TRo-yH-A9o" firstAttribute="top" secondItem="1ac-Wq-As2" secondAttribute="top" id="B47-Uv-Uhe"/>
+                                                                <constraint firstAttribute="trailing" secondItem="TRo-yH-A9o" secondAttribute="trailing" id="Bjq-OY-Zg7"/>
+                                                                <constraint firstAttribute="bottom" secondItem="TRo-yH-A9o" secondAttribute="bottom" id="N3n-80-3xf"/>
+                                                                <constraint firstItem="TRo-yH-A9o" firstAttribute="leading" secondItem="1ac-Wq-As2" secondAttribute="leading" id="t5L-9X-Viv"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="imageView" destination="TRo-yH-A9o" id="VAx-bD-V6V"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>

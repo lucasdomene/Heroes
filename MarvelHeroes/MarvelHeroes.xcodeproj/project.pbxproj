@@ -31,6 +31,7 @@
 		3B3E235420A0F2B800AD3D05 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3E235320A0F2B800AD3D05 /* DetailsTableViewCell.swift */; };
 		3B3E235620A0F4B100AD3D05 /* DetailsViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3E235520A0F4B100AD3D05 /* DetailsViewController+Delegate.swift */; };
 		3B3E235820A0F51C00AD3D05 /* DetailsViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3E235720A0F51C00AD3D05 /* DetailsViewController+CollectionView.swift */; };
+		3B3E235A20A0FCB600AD3D05 /* DetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3E235920A0FCB600AD3D05 /* DetailsCollectionViewCell.swift */; };
 		3BC2B331209F7F4E003D91F4 /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B330209F7F4E003D91F4 /* HeroService.swift */; };
 		3BC2B336209F84F8003D91F4 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B335209F84F8003D91F4 /* String+MD5.swift */; };
 		3BC2B33B209F921C003D91F4 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B339209F921C003D91F4 /* HeroTableViewCell.swift */; };
@@ -89,6 +90,7 @@
 		3B3E235320A0F2B800AD3D05 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		3B3E235520A0F4B100AD3D05 /* DetailsViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+Delegate.swift"; sourceTree = "<group>"; };
 		3B3E235720A0F51C00AD3D05 /* DetailsViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		3B3E235920A0FCB600AD3D05 /* DetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		3BC2B330209F7F4E003D91F4 /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
 		3BC2B332209F8494003D91F4 /* MarvelHeroes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarvelHeroes-Bridging-Header.h"; sourceTree = "<group>"; };
 		3BC2B335209F84F8003D91F4 /* String+MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				3BC2B339209F921C003D91F4 /* HeroTableViewCell.swift */,
 				3BC2B33A209F921C003D91F4 /* HeroTableViewCell.xib */,
 				3B3E235320A0F2B800AD3D05 /* DetailsTableViewCell.swift */,
+				3B3E235920A0FCB600AD3D05 /* DetailsCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				3B3E234820A0CBBE00AD3D05 /* DetailsService.swift in Sources */,
 				3B3E235220A0E7CF00AD3D05 /* DetailsViewController+DataSource.swift in Sources */,
 				3B3E234E20A0E23F00AD3D05 /* Serie.swift in Sources */,
+				3B3E235A20A0FCB600AD3D05 /* DetailsCollectionViewCell.swift in Sources */,
 				3BC2B33B209F921C003D91F4 /* HeroTableViewCell.swift in Sources */,
 				3BC2B340209FA060003D91F4 /* HeroesViewController+DataSource.swift in Sources */,
 				3B3E235820A0F51C00AD3D05 /* DetailsViewController+CollectionView.swift in Sources */,

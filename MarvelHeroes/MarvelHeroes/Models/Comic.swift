@@ -16,7 +16,7 @@ struct Comic {
 	
 }
 
-extension Comic {
+extension Comic: Parseable {
 	
 	init?(json: [String: Any]) {
 		guard let id = json["id"] as? Int,

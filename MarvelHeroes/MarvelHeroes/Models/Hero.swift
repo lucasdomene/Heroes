@@ -22,7 +22,7 @@ extension Hero: Equatable {
 	}
 }
 
-extension Hero {
+extension Hero: Parseable {
 	
 	init?(json: [String: Any]) {
 		guard let id = json["id"] as? Int,

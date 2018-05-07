@@ -18,7 +18,7 @@ struct Thumbnail: Codable {
 	
 }
 
-extension Thumbnail {
+extension Thumbnail: Parseable {
 	
 	init?(json: [String: Any]) {
 		guard let path = json["path"] as? String,

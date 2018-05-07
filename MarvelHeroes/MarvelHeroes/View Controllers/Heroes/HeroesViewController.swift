@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeroesViewController: UIViewController, Loadable {
+class HeroesViewController: UIViewController, UINavigationControllerDelegate, Loadable {
 	
 	// MARK: - Attributes
 	
@@ -24,6 +24,9 @@ class HeroesViewController: UIViewController, Loadable {
 	var heroes = [Hero]()
 	var isSearchActive = false
 	var isFavoritesActive = false
+	var selectedHero: Hero?
+	var selectedHeroImage: UIImage?
+	var selectedFrame: CGRect?
 	
 	// MARK: - View life cycle
 	
@@ -35,6 +38,7 @@ class HeroesViewController: UIViewController, Loadable {
 		configureSpinner()
 		configureEmptyLabel()
 		FavoritesService.retrieve()
+		navigationController?.delegate = self
 	}
 	
 	func registerCell() {
@@ -73,6 +77,18 @@ class HeroesViewController: UIViewController, Loadable {
 			DispatchQueue.main.async {
 				self.stopLoading()
 			}
+		}
+	}
+	
+	public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		guard let frame = selectedFrame else { return nil }
+		guard let heroImage = selectedHeroImage else { return nil }
+		
+		switch operation {
+		case .push:
+			return CustomAnimator(duration: TimeInterval(UINavigationControllerHideShowBarDuration), isPresenting: true, originFrame: frame, image: heroImage)
+		default:
+			return CustomAnimator(duration: TimeInterval(UINavigationControllerHideShowBarDuration), isPresenting: false, originFrame: frame, image: heroImage)
 		}
 	}
 

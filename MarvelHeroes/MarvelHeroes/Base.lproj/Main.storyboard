@@ -64,11 +64,43 @@
                         <outlet property="searchBar" destination="ZAX-TH-qTs" id="u4V-uJ-GxR"/>
                         <outlet property="searchBarHeight" destination="c5C-vf-Hka" id="31f-zX-h4a"/>
                         <outlet property="tableView" destination="bp4-eD-EIb" id="zRf-r0-W07"/>
+                        <segue destination="kfW-UB-9Wy" kind="show" identifier="showDetails" id="A4w-Cp-YZN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="848.79999999999995" y="-564.46776611694156"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="f8G-jJ-9nv">
+            <objects>
+                <viewController id="kfW-UB-9Wy" customClass="DetailsViewController" customModule="MarvelHeroes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VHI-8y-VHY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BCG-bz-Ukd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="LZl-9q-QqO"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BCG-bz-Ukd" firstAttribute="leading" secondItem="N2V-cK-BNG" secondAttribute="leading" id="ezW-Ov-HwG"/>
+                            <constraint firstItem="BCG-bz-Ukd" firstAttribute="top" secondItem="N2V-cK-BNG" secondAttribute="top" id="ovp-M7-Td8"/>
+                            <constraint firstItem="N2V-cK-BNG" firstAttribute="trailing" secondItem="BCG-bz-Ukd" secondAttribute="trailing" id="zyL-AI-Fvr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N2V-cK-BNG"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="BCG-bz-Ukd" id="1Rk-dO-tgD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mje-lD-X0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1623" y="-566"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7gk-gW-lD9">

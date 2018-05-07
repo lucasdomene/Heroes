@@ -46,4 +46,14 @@ extension HeroesViewController: UITableViewDelegate {
 		emptyLabel?.isHidden = !(FavoritesService.favorites.isEmpty && isFavoritesActive)
 	}
 	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let heroes = isFavoritesActive ? FavoritesService.favorites : self.heroes
+		selectedHero = heroes[indexPath.row]
+		if let cell = tableView.cellForRow(at: indexPath) as? HeroTableViewCell {
+			selectedHeroImage = cell.heroImage.image
+			selectedFrame = tableView.convert(cell.frame, to: tableView.superview)
+		}
+		performSegue(withIdentifier: "showDetails", sender: self)
+	}
+	
 }

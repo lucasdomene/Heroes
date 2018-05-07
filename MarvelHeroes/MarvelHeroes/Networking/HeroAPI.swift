@@ -24,10 +24,10 @@ enum HeroAPI {
 	// MARK: - Endpoints
 	
 	case heroes(offset: Int, name: String?)
-	case comics(offset: Int, heroID: String)
-	case events(offset: Int, heroID: String)
-	case stories(offset: Int, heroID: String)
-	case series(offset: Int, heroID: String)
+	case comics(heroID: String)
+	case events(heroID: String)
+	case stories(heroID: String)
+	case series(heroID: String)
 	
 	// MARK: - HTTP Method
 	
@@ -44,13 +44,13 @@ enum HeroAPI {
 		switch self {
 		case .heroes:
 			return "characters"
-		case .comics(_, let heroID):
+		case .comics(let heroID):
 			return "characters/\(heroID)/comics"
-		case .events(_, let heroID):
+		case .events(let heroID):
 			return"characters/\(heroID)/events"
-		case .stories(_, let heroID):
+		case .stories(let heroID):
 			return"characters/\(heroID)/stories"
-		case .series(_, let heroID):
+		case .series(let heroID):
 			return"characters/\(heroID)/series"
 		}
 	}
@@ -66,8 +66,7 @@ enum HeroAPI {
 				parameters["name"] = name
 			}
 			return parameters
-		case .comics(let offset, _), .events(let offset, _), .stories(let offset, _), .series(let offset, _):
-			parameters["offset"] = offset
+		case .comics, .events, .stories, .series:
 			return parameters
 		}
 	}

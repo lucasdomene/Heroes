@@ -40,7 +40,7 @@ class DetailsViewController: UIViewController {
 	}
 	
 	func fetchComics() {
-		DetailsService.fetchDetails(type: Comic.self, offset: 0, heroID: String(hero.id)) { result in
+		DetailsService.fetchDetails(type: Comic.self, heroID: String(hero.id)) { result in
 			switch result {
 			case .success(let comics):
 				self.details[Sections.comics.rawValue] = comics
@@ -51,7 +51,7 @@ class DetailsViewController: UIViewController {
 	}
 	
 	func fetchEvents() {
-		DetailsService.fetchDetails(type: Event.self, offset: 0, heroID: String(hero.id)) { result in
+		DetailsService.fetchDetails(type: Event.self, heroID: String(hero.id)) { result in
 			switch result {
 			case .success(let events):
 				self.details[Sections.events.rawValue] = events
@@ -62,7 +62,7 @@ class DetailsViewController: UIViewController {
 	}
 	
 	func fetchSeries() {
-		DetailsService.fetchDetails(type: Serie.self, offset: 0, heroID: String(hero.id)) { result in
+		DetailsService.fetchDetails(type: Serie.self, heroID: String(hero.id)) { result in
 			switch result {
 			case .success(let series):
 				self.details[Sections.series.rawValue] = series
@@ -73,7 +73,7 @@ class DetailsViewController: UIViewController {
 	}
 	
 	func fetchStories() {
-		DetailsService.fetchDetails(type: Story.self, offset: 0, heroID: String(hero.id)) { result in
+		DetailsService.fetchDetails(type: Story.self, heroID: String(hero.id)) { result in
 			switch result {
 			case .success(let stories):
 				self.details[Sections.stories.rawValue] = stories

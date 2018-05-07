@@ -14,8 +14,8 @@ protocol Parseable {
 
 class DetailsService {
 	
-	class func fetchDetails<T: Parseable>(type: T.Type, offset: Int, heroID: String, completion: @escaping (Result<[T]>) -> Void) {
-		Request.shared.run(urlRequest: urlRequest(forType: type, offset: offset, heroID: heroID)) { data, response, error in
+	class func fetchDetails<T: Parseable>(type: T.Type, heroID: String, completion: @escaping (Result<[T]>) -> Void) {
+		Request.shared.run(urlRequest: urlRequest(forType: type, heroID: heroID)) { data, response, error in
 			if error != nil {
 				print("ERROR")
 				// TODO: - Error Handling
@@ -42,15 +42,15 @@ class DetailsService {
 		}
 	}
 	
-	private class func urlRequest<T: Parseable>(forType type: T.Type, offset: Int, heroID: String) -> URLRequest {
+	private class func urlRequest<T: Parseable>(forType type: T.Type, heroID: String) -> URLRequest {
 		if type is Comic.Type {
-			return HeroAPI.comics(offset: offset, heroID: heroID).asURLRequest()
+			return HeroAPI.comics(heroID: heroID).asURLRequest()
 		} else if type is Event.Type {
-			return HeroAPI.events(offset: offset, heroID: heroID).asURLRequest()
+			return HeroAPI.events(heroID: heroID).asURLRequest()
 		} else if type is Serie.Type {
-			return HeroAPI.series(offset: offset, heroID: heroID).asURLRequest()
+			return HeroAPI.series(heroID: heroID).asURLRequest()
 		}
-		return HeroAPI.stories(offset: offset, heroID: heroID).asURLRequest()
+		return HeroAPI.stories(heroID: heroID).asURLRequest()
 	}
 	
 }

@@ -14,8 +14,15 @@ extension HeroesViewController: UITableViewDelegate {
 		let heroes = isFavoritesActive ? FavoritesService.favorites : self.heroes
 		cell.tag = indexPath.row
 		let hero = heroes[indexPath.row]
+		
+		if let image = imageService.imageForKey(key: String(hero.id)) {
+			(cell as? HeroTableViewCell)?.heroImage.image = image
+			return
+		}
+		
 		if let url = URL(string: hero.thumbnail.fullPath) {
-			ImageService.downloadImage(fromURL: url) { image in
+			imageService.downloadImage(fromURL: url) { image in
+				self.imageService.setImage(image: image, forkey: String(hero.id))
 				DispatchQueue.main.async {
 					if cell.tag == indexPath.row {
 						(cell as? HeroTableViewCell)?.heroImage.image = image

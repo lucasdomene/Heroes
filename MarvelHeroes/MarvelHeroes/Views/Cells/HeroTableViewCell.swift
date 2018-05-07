@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class HeroTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var heroImage: UIImageView!
@@ -18,6 +17,7 @@ class HeroTableViewCell: UITableViewCell {
 	var hero: Hero? {
 		didSet {
 			nameLabel.text = hero?.name
+			// TODO: - Set image placeholder
 			if let hero = hero {
 				setFavorite(FavoritesService.isFavorite(hero))
 			}

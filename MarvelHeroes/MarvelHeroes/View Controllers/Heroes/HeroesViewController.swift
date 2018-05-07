@@ -16,6 +16,7 @@ class HeroesViewController: UIViewController, Loadable {
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var favoritesButton: UIBarButtonItem!
 	
+	let imageService = ImageService()
 	var spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
 	var emptyLabel: UILabel?
 	var offset = 0

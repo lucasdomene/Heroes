@@ -23,7 +23,7 @@ extension HeroesViewController: UITableViewDelegate {
 			}
 		}
 		
-		if indexPath.row > heroes.count - 5 {
+		if indexPath.row > heroes.count - 2 && heroes.count > 5 {
 			offset += 20
 			fetchHeroes()
 		}

@@ -17,6 +17,8 @@ protocol Loadable {
 extension Loadable where Self: UIViewController {
 	
 	func configureSpinner() {
+		spinner.backgroundColor = UIColor.red
+		spinner.layer.cornerRadius = 10
 		spinner.hidesWhenStopped = true
 		spinner.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(spinner)

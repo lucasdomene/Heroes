@@ -15,9 +15,9 @@ enum Result<T> {
 
 class HeroService {
 	
-	class func fetchHeroes(_ offset: Int, completion: @escaping (Result<[Hero]>) -> Void) {
+	class func fetchHeroes(_ offset: Int, name: String? = nil, completion: @escaping (Result<[Hero]>) -> Void) {
 		
-		Request.shared.run(urlRequest: HeroAPI.heroes(offset: offset).asURLRequest()) { data, response, error in
+		Request.shared.run(urlRequest: HeroAPI.heroes(offset: offset, name: name).asURLRequest()) { data, response, error in
 			if error != nil {
 				print("ERROR")
 				// TODO: - Error Handling

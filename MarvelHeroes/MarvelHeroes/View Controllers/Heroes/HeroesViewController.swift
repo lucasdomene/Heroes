@@ -13,17 +13,23 @@ class HeroesViewController: UIViewController, Loadable {
 	// MARK: - Attributes
 	
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var searchBar: UISearchBar!
+	
 	var spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+	var emptyLabel: UILabel?
 	var offset = 0
 	var heroes = [Hero]()
+	var isSearchActive = false
 	
 	// MARK: - Attributes
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		tableView.tableFooterView = UIView()
 		registerCell()
 		fetchHeroes()
 		configureSpinner()
+		configureEmptyLabel()
 	}
 	
 	func registerCell() {
@@ -31,14 +37,15 @@ class HeroesViewController: UIViewController, Loadable {
 		tableView.register(nib, forCellReuseIdentifier: "HeroCell")
 	}
 	
-	func fetchHeroes() {
+	func fetchHeroes(name: String? = nil) {
 		startLoading()
-		HeroService.fetchHeroes(offset) { result in
+		HeroService.fetchHeroes(offset, name: name) { result in
 			switch result {
 			case .success(let heroes):
 				self.heroes.append(contentsOf: heroes)
 				DispatchQueue.main.async {
 					self.tableView.reloadData()
+					self.emptyLabel?.isHidden = !(self.isSearchActive && self.heroes.isEmpty)
 				}
 			case .failure(let error):
 				print(error)

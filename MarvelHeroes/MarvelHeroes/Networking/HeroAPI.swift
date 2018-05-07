@@ -23,7 +23,7 @@ enum HeroAPI {
 	
 	// MARK: - Endpoints
 	
-	case heroes(offset: Int)
+	case heroes(offset: Int, name: String?)
 	
 	// MARK: - HTTP Method
 	
@@ -47,10 +47,14 @@ enum HeroAPI {
 	
 	var parameters: [String: Any] {
 		switch self {
-		case .heroes(let offset):
+		case .heroes(let offset, let name):
 			let ts = NSUUID().uuidString
 			let hash = (ts + HeroAPI.publicKey + HeroAPI.privateKey).md5()!
-			return ["offset": offset, "limit": 20, "apikey": HeroAPI.privateKey, "hash": hash, "ts": ts]
+			var params: [String : Any] = ["offset": offset, "limit": 20, "apikey": HeroAPI.privateKey, "hash": hash, "ts": ts]
+			if name != nil {
+				params["name"] = name
+			}
+			return params
 		}
 	}
 	

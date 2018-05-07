@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H28-BE-28H">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Heroes View Controller-->
+        <!--Marvel-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HeroesViewController" customModule="MarvelHeroes" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,29 +19,66 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bp4-eD-EIb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="jos-H5-Z4U"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="EKv-Mm-luo"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZAX-TH-qTs">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="IH2-67-6Qv"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bp4-eD-EIb" secondAttribute="bottom" id="05d-oe-ery"/>
+                            <constraint firstItem="ZAX-TH-qTs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8gz-kF-rhB"/>
+                            <constraint firstItem="bp4-eD-EIb" firstAttribute="top" secondItem="ZAX-TH-qTs" secondAttribute="bottom" id="Ww0-1d-92E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bp4-eD-EIb" secondAttribute="trailing" id="aNI-MR-qZg"/>
+                            <constraint firstItem="ZAX-TH-qTs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="evP-AZ-wqX"/>
+                            <constraint firstItem="ZAX-TH-qTs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fQg-P8-g7p"/>
                             <constraint firstItem="bp4-eD-EIb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ncv-x3-eUw"/>
-                            <constraint firstItem="bp4-eD-EIb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uYK-0a-srQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Marvel" id="RNe-DT-Hgf"/>
                     <connections>
+                        <outlet property="searchBar" destination="ZAX-TH-qTs" id="u4V-uJ-GxR"/>
                         <outlet property="tableView" destination="bp4-eD-EIb" id="zRf-r0-W07"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="848.79999999999995" y="-564.46776611694156"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7gk-gW-lD9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H28-BE-28H" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CJL-WA-AKn">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ieN-CH-4LK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGH-Me-9dl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="-564.46776611694156"/>
         </scene>
     </scenes>
 </document>

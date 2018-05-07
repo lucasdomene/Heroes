@@ -24,12 +24,13 @@ enum HeroAPI {
 	// MARK: - Endpoints
 	
 	case heroes(offset: Int, name: String?)
+	case comics(offset: Int, heroID: String)
 	
 	// MARK: - HTTP Method
 	
 	var method: HTTPMethod {
 		switch self {
-		case .heroes:
+		case .heroes, .comics:
 			return .get
 		}
 	}
@@ -40,21 +41,25 @@ enum HeroAPI {
 		switch self {
 		case .heroes:
 			return "characters"
+		case .comics(_, let heroID):
+			return "characters/\(heroID)/comics"
 		}
 	}
 	
 	// MARK: - Parameters
 	
 	var parameters: [String: Any] {
+		var parameters = requiredParameters()
 		switch self {
 		case .heroes(let offset, let name):
-			let ts = NSUUID().uuidString
-			let hash = (ts + HeroAPI.publicKey + HeroAPI.privateKey).md5()!
-			var params: [String : Any] = ["offset": offset, "limit": 20, "apikey": HeroAPI.privateKey, "hash": hash, "ts": ts]
+			parameters["offset"] = offset
 			if name != nil {
-				params["name"] = name
+				parameters["name"] = name
 			}
-			return params
+			return parameters
+		case .comics(let offset, _):
+			parameters["offset"] = offset
+			return parameters
 		}
 	}
 	
@@ -71,5 +76,16 @@ enum HeroAPI {
 		urlRequest.httpMethod = method.rawValue
 		
 		return urlRequest
+	}
+	
+	func requiredParameters() -> [String: Any] {
+		let ts = NSUUID().uuidString
+		let hash = (ts + HeroAPI.publicKey + HeroAPI.privateKey).md5()!
+		var parameters = [String: Any]()
+		parameters["apikey"] = HeroAPI.privateKey
+		parameters["hash"] = hash
+		parameters["ts"] = ts
+		parameters["limit"] = 20
+		return parameters
 	}
 }

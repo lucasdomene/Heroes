@@ -16,13 +16,12 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailsCollectionCell", for: indexPath) as! DetailsCollectionViewCell
-		cell.backgroundColor = UIColor.red
 		return cell
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 		cell.tag = indexPath.row
-		cell.backgroundColor = UIColor.red
+		// TODO: - Set placeholder
 		let detailItem = details[collectionView.tag][indexPath.row]
 		
 		if let image = imageService.imageForKey(key: String(detailItem.id)) {

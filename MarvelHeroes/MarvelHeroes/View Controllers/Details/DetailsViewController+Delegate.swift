@@ -12,7 +12,7 @@ extension DetailsViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 		guard let detailsTableViewCell = cell as? DetailsTableViewCell else { return }
-		detailsTableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+		detailsTableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.section)
 	}
 	
 }

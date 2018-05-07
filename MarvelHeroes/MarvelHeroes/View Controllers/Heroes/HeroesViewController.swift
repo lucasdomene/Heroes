@@ -33,6 +33,7 @@ class HeroesViewController: UIViewController, Loadable {
 		fetchHeroes()
 		configureSpinner()
 		configureEmptyLabel()
+		FavoritesService.retrieve()
 	}
 	
 	func registerCell() {
@@ -45,6 +46,9 @@ class HeroesViewController: UIViewController, Loadable {
 		favoritesButton.image = isFavoritesActive ? #imageLiteral(resourceName: "close") : #imageLiteral(resourceName: "favorites")
 		tableView.reloadData()
 		emptyLabel?.isHidden = !(FavoritesService.favorites.isEmpty && isFavoritesActive)
+		if !FavoritesService.favorites.isEmpty && isFavoritesActive {
+			tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+		}
 	}
 	
 	func fetchHeroes(name: String? = nil) {

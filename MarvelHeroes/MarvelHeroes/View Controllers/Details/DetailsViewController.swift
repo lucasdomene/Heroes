@@ -132,7 +132,7 @@ class DetailsViewController: UIViewController {
 				case .success(let comics):
 					self.handleSuccess(withItems: comics, forSection: section)
 				case .failure(let error):
-					print(error)
+					ErrorHandler.handle(error: error, inViewController: self)
 				}
 				self.stopLoading(forSection: section)
 				self.didFetch[section.rawValue] = true
@@ -143,7 +143,7 @@ class DetailsViewController: UIViewController {
 				case .success(let events):
 					self.handleSuccess(withItems: events, forSection: section)
 				case .failure(let error):
-					print(error)
+					ErrorHandler.handle(error: error, inViewController: self)
 				}
 				self.stopLoading(forSection: section)
 				self.didFetch[section.rawValue] = true
@@ -154,7 +154,7 @@ class DetailsViewController: UIViewController {
 				case .success(let stories):
 					self.handleSuccess(withItems: stories, forSection: section)
 				case .failure(let error):
-					print(error)
+					ErrorHandler.handle(error: error, inViewController: self)
 				}
 				self.stopLoading(forSection: section)
 				self.didFetch[section.rawValue] = true
@@ -165,7 +165,7 @@ class DetailsViewController: UIViewController {
 				case .success(let series):
 					self.handleSuccess(withItems: series, forSection: section)
 				case .failure(let error):
-					print(error)
+					ErrorHandler.handle(error: error, inViewController: self)
 				}
 				self.stopLoading(forSection: section)
 				self.didFetch[section.rawValue] = true

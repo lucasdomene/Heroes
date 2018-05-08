@@ -85,7 +85,7 @@ class HeroesViewController: UIViewController, UINavigationControllerDelegate, Lo
 					self.emptyLabel?.isHidden = !(self.isSearchActive && self.heroes.isEmpty)
 				}
 			case .failure(let error):
-				print(error)
+				ErrorHandler.handle(error: error, inViewController: self)
 			}
 			DispatchQueue.main.async {
 				self.stopLoading()

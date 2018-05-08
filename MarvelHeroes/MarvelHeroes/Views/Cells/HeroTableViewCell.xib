@@ -37,6 +37,9 @@
                             <constraint firstAttribute="height" constant="50" id="rTS-JM-GyO"/>
                             <constraint firstAttribute="width" constant="50" id="xKK-13-mTZ"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="favoriteImage"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                 </subviews>
                 <constraints>
@@ -51,6 +54,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="HeroCell"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="favoriteImageView" destination="9Mr-o7-QLw" id="1aK-hU-cJD"/>
                 <outlet property="heroImage" destination="OU4-NA-S9G" id="teF-mS-RX5"/>

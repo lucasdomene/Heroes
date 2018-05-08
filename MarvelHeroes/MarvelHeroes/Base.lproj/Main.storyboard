@@ -21,6 +21,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bp4-eD-EIb">
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="HeroesTableView"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="jos-H5-Z4U"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="EKv-Mm-luo"/>
@@ -34,12 +37,16 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="searchBar"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="IH2-67-6Qv"/>
                                 </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="HeroesView"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bp4-eD-EIb" secondAttribute="bottom" id="05d-oe-ery"/>
                             <constraint firstItem="ZAX-TH-qTs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8gz-kF-rhB"/>
@@ -132,6 +139,9 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="DetailsCollectionView"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </collectionView>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLw-du-TTw">
                                                     <rect key="frame" x="136" y="64" width="103" height="23"/>
@@ -182,6 +192,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="DetailsView"/>
                         <constraints>
                             <constraint firstItem="OqN-mP-gOu" firstAttribute="top" secondItem="mAx-i6-3qU" secondAttribute="bottom" constant="20" id="BVE-US-Rp5"/>
                             <constraint firstItem="N2V-cK-BNG" firstAttribute="bottom" secondItem="OqN-mP-gOu" secondAttribute="bottom" id="CAE-oS-c4o"/>
@@ -253,6 +264,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="ItemDetailsView"/>
                         <constraints>
                             <constraint firstItem="ZBO-LQ-qOm" firstAttribute="leading" secondItem="kCs-Yx-bUk" secondAttribute="leading" constant="20" id="32g-kz-BdZ"/>
                             <constraint firstItem="eLp-gI-1NY" firstAttribute="top" secondItem="kCs-Yx-bUk" secondAttribute="top" constant="10" id="OQG-aL-WcC"/>

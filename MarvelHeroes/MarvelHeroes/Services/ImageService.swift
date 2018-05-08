@@ -17,7 +17,7 @@ class ImageService {
 	// MARK: - Instance Methods
 	
 	func downloadImage(fromURL url: URL, completion: @escaping (UIImage?) -> Void) {
-		Request.shared.run(urlRequest: URLRequest(url: url)) { data, response, error in
+		Request.shared.run(urlRequest: URLRequest(url: url)) { data, error in
 			completion(data != nil ? UIImage(data: data!) : nil)
 		}
 	}

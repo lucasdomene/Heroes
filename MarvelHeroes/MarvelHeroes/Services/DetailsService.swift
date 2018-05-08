@@ -11,7 +11,7 @@ import Foundation
 class DetailsService {
 	
 	class func fetchDetails<T: Parseable>(type: T.Type, heroID: String, completion: @escaping (Result<[T]>) -> Void) {
-		Request.shared.run(urlRequest: urlRequest(forType: type, heroID: heroID)) { data, _, error in
+		Request.shared.run(urlRequest: urlRequest(forType: type, heroID: heroID)) { data, error in
 			completion(T.parseResponse(data: data, error: error))
 		}
 	}

@@ -11,7 +11,7 @@ import Foundation
 class HeroService {
 	
 	class func fetchHeroes(_ offset: Int, name: String? = nil, completion: @escaping (Result<[Hero]>) -> Void) {
-		Request.shared.run(urlRequest: HeroAPI.heroes(offset: offset, name: name).asURLRequest()) { data, response, error in
+		Request.shared.run(urlRequest: HeroAPI.heroes(offset: offset, name: name).asURLRequest()) { data, error in
 			completion(Hero.parseResponse(data: data, error: error))
 		}
 	}

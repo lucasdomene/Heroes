@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum Result<T> {
-	case success(T)
-	case failure(Error)
-}
-
 class HeroService {
 	
 	class func fetchHeroes(_ offset: Int, name: String? = nil, completion: @escaping (Result<[Hero]>) -> Void) {

@@ -33,6 +33,11 @@
 		3B3E235820A0F51C00AD3D05 /* DetailsViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3E235720A0F51C00AD3D05 /* DetailsViewController+CollectionView.swift */; };
 		3B3E235A20A0FCB600AD3D05 /* DetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3E235920A0FCB600AD3D05 /* DetailsCollectionViewCell.swift */; };
 		3B3E235D20A155ED00AD3D05 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3E235C20A155ED00AD3D05 /* ItemDetailViewController.swift */; };
+		3BBA9D4720A1D4C2007753E4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D4620A1D4C2007753E4 /* Result.swift */; };
+		3BBA9D4920A1D4FD007753E4 /* Parseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D4820A1D4FD007753E4 /* Parseable.swift */; };
+		3BBA9D4B20A1D52B007753E4 /* FavoriteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D4A20A1D52B007753E4 /* FavoriteProtocol.swift */; };
+		3BBA9D4D20A1D555007753E4 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D4C20A1D555007753E4 /* HTTPMethod.swift */; };
+		3BBA9D4F20A1D57C007753E4 /* Detailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D4E20A1D57C007753E4 /* Detailable.swift */; };
 		3BC2B331209F7F4E003D91F4 /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B330209F7F4E003D91F4 /* HeroService.swift */; };
 		3BC2B336209F84F8003D91F4 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B335209F84F8003D91F4 /* String+MD5.swift */; };
 		3BC2B33B209F921C003D91F4 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B339209F921C003D91F4 /* HeroTableViewCell.swift */; };
@@ -93,6 +98,11 @@
 		3B3E235720A0F51C00AD3D05 /* DetailsViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		3B3E235920A0FCB600AD3D05 /* DetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		3B3E235C20A155ED00AD3D05 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		3BBA9D4620A1D4C2007753E4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		3BBA9D4820A1D4FD007753E4 /* Parseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parseable.swift; sourceTree = "<group>"; };
+		3BBA9D4A20A1D52B007753E4 /* FavoriteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProtocol.swift; sourceTree = "<group>"; };
+		3BBA9D4C20A1D555007753E4 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		3BBA9D4E20A1D57C007753E4 /* Detailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detailable.swift; sourceTree = "<group>"; };
 		3BC2B330209F7F4E003D91F4 /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
 		3BC2B332209F8494003D91F4 /* MarvelHeroes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarvelHeroes-Bridging-Header.h"; sourceTree = "<group>"; };
 		3BC2B335209F84F8003D91F4 /* String+MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
@@ -292,6 +302,11 @@
 			isa = PBXGroup;
 			children = (
 				3BC2B347209FB2B3003D91F4 /* Loadable.swift */,
+				3BBA9D4620A1D4C2007753E4 /* Result.swift */,
+				3BBA9D4820A1D4FD007753E4 /* Parseable.swift */,
+				3BBA9D4A20A1D52B007753E4 /* FavoriteProtocol.swift */,
+				3BBA9D4C20A1D555007753E4 /* HTTPMethod.swift */,
+				3BBA9D4E20A1D57C007753E4 /* Detailable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -440,7 +455,9 @@
 				3B124C67209E306A00C86DA0 /* Request.swift in Sources */,
 				3BC2B348209FB2B3003D91F4 /* Loadable.swift in Sources */,
 				3BC2B336209F84F8003D91F4 /* String+MD5.swift in Sources */,
+				3BBA9D4F20A1D57C007753E4 /* Detailable.swift in Sources */,
 				3B3E234820A0CBBE00AD3D05 /* DetailsService.swift in Sources */,
+				3BBA9D4D20A1D555007753E4 /* HTTPMethod.swift in Sources */,
 				3B3E235220A0E7CF00AD3D05 /* DetailsViewController+DataSource.swift in Sources */,
 				3B3E234E20A0E23F00AD3D05 /* Serie.swift in Sources */,
 				3B3E235A20A0FCB600AD3D05 /* DetailsCollectionViewCell.swift in Sources */,
@@ -449,14 +466,17 @@
 				3B3E235820A0F51C00AD3D05 /* DetailsViewController+CollectionView.swift in Sources */,
 				3B124C31209E26DB00C86DA0 /* AppDelegate.swift in Sources */,
 				3B3E234420A0AD1700AD3D05 /* DetailsViewController.swift in Sources */,
+				3BBA9D4B20A1D52B007753E4 /* FavoriteProtocol.swift in Sources */,
 				3B124C62209E2A4800C86DA0 /* Thumbnail.swift in Sources */,
 				3BC2B343209FA595003D91F4 /* ImageService.swift in Sources */,
 				3B3E235D20A155ED00AD3D05 /* ItemDetailViewController.swift in Sources */,
 				3B124C65209E2AA800C86DA0 /* HeroAPI.swift in Sources */,
+				3BBA9D4720A1D4C2007753E4 /* Result.swift in Sources */,
 				3B3E234A20A0D42600AD3D05 /* Comic.swift in Sources */,
 				3B124C60209E29EE00C86DA0 /* Hero.swift in Sources */,
 				3B3E235020A0E24700AD3D05 /* Story.swift in Sources */,
 				3B3E235620A0F4B100AD3D05 /* DetailsViewController+Delegate.swift in Sources */,
+				3BBA9D4920A1D4FD007753E4 /* Parseable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

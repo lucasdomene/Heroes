@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol FavoriteProtocol: class {
-	func didRemoveHero(atIndexPath indexPath: IndexPath)
-}
-
 class HeroTableViewCell: UITableViewCell {
 
 	// MARK: - Outlet

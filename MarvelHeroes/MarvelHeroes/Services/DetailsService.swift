@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol Parseable {
-	init?(json: [String: Any])
-}
-
 class DetailsService {
 	
 	class func fetchDetails<T: Parseable>(type: T.Type, heroID: String, completion: @escaping (Result<[T]>) -> Void) {

@@ -8,13 +8,6 @@
 
 import Foundation
 
-protocol Detailable {
-	var id: Int { get set }
-	var title: String { get set }
-	var description: String { get set }
-	var thumbnail: Thumbnail? { get set }
-}
-
 struct Comic: Detailable {
 	
 	var id: Int

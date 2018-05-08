@@ -75,7 +75,7 @@
         <!--Details View Controller-->
         <scene sceneID="f8G-jJ-9nv">
             <objects>
-                <viewController id="kfW-UB-9Wy" customClass="DetailsViewController" customModule="MarvelHeroes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="kfW-UB-9Wy" customClass="DetailsViewController" customModule="MarvelHeroes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VHI-8y-VHY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,7 +209,7 @@
         <!--Item Detail View Controller-->
         <scene sceneID="Qwi-1g-s5b">
             <objects>
-                <viewController id="I1F-Mq-3J0" customClass="ItemDetailViewController" customModule="MarvelHeroes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemDetailViewController" id="I1F-Mq-3J0" customClass="ItemDetailViewController" customModule="MarvelHeroes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Txn-sg-f36">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

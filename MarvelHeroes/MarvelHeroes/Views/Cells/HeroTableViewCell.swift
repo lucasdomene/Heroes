@@ -14,11 +14,15 @@ protocol FavoriteProtocol: class {
 
 class HeroTableViewCell: UITableViewCell {
 
+	// MARK: - Outlet
+	
 	@IBOutlet weak var heroImage: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var favoriteImageView: UIImageView!
-	weak var delegate: FavoriteProtocol?
 	
+	// MARK: - Attributes
+	
+	weak var delegate: FavoriteProtocol?
 	var hero: Hero? {
 		didSet {
 			nameLabel.text = hero?.name
@@ -28,10 +32,14 @@ class HeroTableViewCell: UITableViewCell {
 		}
 	}
 	
+	// MARK: - View life cycle
+	
 	override func awakeFromNib() {
 		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(favoritePressed))
 		favoriteImageView.addGestureRecognizer(tapGesture)
 	}
+	
+	// MARK: - Customization
 	
 	func clean() {
 		heroImage.image = nil
@@ -41,6 +49,8 @@ class HeroTableViewCell: UITableViewCell {
 	func setFavorite(_ isFavorite: Bool) {
 		favoriteImageView.image = isFavorite ? #imageLiteral(resourceName: "favorite_highlighted") : #imageLiteral(resourceName: "favorite_normal")
 	}
+	
+	// MARK: - Actions
 	
 	@objc func favoritePressed() {
 		if let hero = hero {

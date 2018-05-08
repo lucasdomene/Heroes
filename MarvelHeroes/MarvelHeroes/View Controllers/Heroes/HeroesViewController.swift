@@ -10,12 +10,14 @@ import UIKit
 
 class HeroesViewController: UIViewController, UINavigationControllerDelegate, Loadable {
 	
-	// MARK: - Attributes
+	// MARK: - Outlets
 	
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var favoritesButton: UIBarButtonItem!
 	@IBOutlet weak var searchBarHeight: NSLayoutConstraint!
+	
+	// MARK: - Attributes
 	
 	let imageService = ImageService()
 	var spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
@@ -46,10 +48,14 @@ class HeroesViewController: UIViewController, UINavigationControllerDelegate, Lo
 		tableView.reloadData()
 	}
 	
+	// MARK: - View configuration
+	
 	func registerCell() {
 		let nib = UINib(nibName: "HeroTableViewCell", bundle: nil)
 		tableView.register(nib, forCellReuseIdentifier: "HeroCell")
 	}
+	
+	// MARK: - Actions
 	
 	@IBAction func favoritesPressed(_ sender: UIBarButtonItem) {
 		isFavoritesActive = !isFavoritesActive
@@ -65,6 +71,8 @@ class HeroesViewController: UIViewController, UINavigationControllerDelegate, Lo
 			self.view.layoutIfNeeded()
 		}
 	}
+	
+	// MARK: - Data Fetchers
 	
 	func fetchHeroes(name: String? = nil) {
 		startLoading()
@@ -84,6 +92,8 @@ class HeroesViewController: UIViewController, UINavigationControllerDelegate, Lo
 			}
 		}
 	}
+	
+	// MARK: - Navigation
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "showDetails" {

@@ -9,10 +9,14 @@
 import UIKit
 
 class DetailsTableViewCell: UITableViewCell {
-		
+	
+	// MARK: - Outlets
+	
 	@IBOutlet private weak var collectionView: UICollectionView!
 	@IBOutlet weak var emptyLabel: UILabel!
 	@IBOutlet weak var spinner: UIActivityIndicatorView!
+	
+	// MARK: - Customization
 	
 	func setCollectionViewDataSourceDelegate<T: UICollectionViewDataSource & UICollectionViewDelegate>(dataSourceDelegate: T, forRow row: Int) {
 		collectionView.delegate = dataSourceDelegate

@@ -10,13 +10,19 @@ import UIKit
 
 class ItemDetailViewController: UIViewController {
 	
+	// MARK: - Outlets
+	
 	@IBOutlet weak var itemImageView: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var descriptionLabel: UILabel!
 	
+	// MARK: - Attributes
+	
 	var itemTitle: String?
 	var itemDescription: String?
 	var image: UIImage?
+	
+	// MARK: - View life cycle
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -25,6 +31,8 @@ class ItemDetailViewController: UIViewController {
 		descriptionLabel.text = itemDescription
 		itemImageView.image = image
 	}
+	
+	// MARK: - Navigation
 	
 	@IBAction func close(_ sender: UIButton) {
 		dismiss(animated: true, completion: nil)

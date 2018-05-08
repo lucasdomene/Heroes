@@ -10,6 +10,8 @@ import UIKit
 
 class DetailsCollectionViewCell: UICollectionViewCell {
 	
+	// MARK: - Outlets
+	
 	@IBOutlet weak var imageView: UIImageView!
 	
 }

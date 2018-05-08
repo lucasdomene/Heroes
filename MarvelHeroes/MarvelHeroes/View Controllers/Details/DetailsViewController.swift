@@ -10,9 +10,13 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 	
+	// MARK: - Outlet
+	
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var favoriteImageView: UIImageView!
+	
+	// MARK: - Attributes
 	
 	var hero: Hero!
 	var details = [[Detailable]]()
@@ -54,6 +58,8 @@ class DetailsViewController: UIViewController {
 		}
 	}
 	
+	// MARK: - View life cycle
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.tableFooterView = UIView()
@@ -64,15 +70,11 @@ class DetailsViewController: UIViewController {
 		setFavorite(FavoritesService.isFavorite(hero))
 	}
 	
+	// MARK: - View configuration
+	
 	func configureFavoriteButton() {
 		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(favoritePressed))
 		favoriteImageView.addGestureRecognizer(tapGesture)
-	}
-	
-	@objc func favoritePressed() {
-		let isFavorite = FavoritesService.isFavorite(hero)
-		isFavorite ? FavoritesService.remove(hero) : FavoritesService.add(hero)
-		setFavorite(!isFavorite)
 	}
 	
 	func setFavorite(_ isFavorite: Bool) {
@@ -84,6 +86,42 @@ class DetailsViewController: UIViewController {
 			details.append([])
 		}
 	}
+	
+	// MARK: - Actions
+	
+	@objc func favoritePressed() {
+		let isFavorite = FavoritesService.isFavorite(hero)
+		isFavorite ? FavoritesService.remove(hero) : FavoritesService.add(hero)
+		setFavorite(!isFavorite)
+	}
+	
+	func startLoading(forSection section: Sections) {
+		DispatchQueue.main.async {
+			let indexPath = IndexPath(row: 0, section: section.rawValue)
+			let cell = self.tableView.cellForRow(at: indexPath)
+			(cell as? DetailsTableViewCell)?.spinner?.startAnimating()
+		}
+	}
+	
+	func stopLoading(forSection section: Sections) {
+		DispatchQueue.main.async {
+			let indexPath = IndexPath(row: 0, section: section.rawValue)
+			let cell = self.tableView.cellForRow(at: indexPath)
+			(cell as? DetailsTableViewCell)?.spinner?.stopAnimating()
+		}
+	}
+	
+	func updateCell(forSection section: Sections) {
+		DispatchQueue.main.async {
+			let indexPath = IndexPath(row: 0, section: section.rawValue)
+			let cell = self.tableView.cellForRow(at: indexPath)
+			self.tableView.reloadRows(at: [indexPath], with: .none)
+			(cell as? DetailsTableViewCell)?.emptyLabel.isHidden = !self.details[section.rawValue].isEmpty
+		}
+	}
+	
+	
+	// MARK: - Data Fetchers
 	
 	func fetchDetails(forSection section: Sections) {
 		startLoading(forSection: section)
@@ -139,31 +177,8 @@ class DetailsViewController: UIViewController {
 		self.details[section.rawValue] = items
 		self.updateCell(forSection: section)
 	}
-	
-	func updateCell(forSection section: Sections) {
-		DispatchQueue.main.async {
-			let indexPath = IndexPath(row: 0, section: section.rawValue)
-			let cell = self.tableView.cellForRow(at: indexPath)
-			self.tableView.reloadRows(at: [indexPath], with: .none)
-			(cell as? DetailsTableViewCell)?.emptyLabel.isHidden = !self.details[section.rawValue].isEmpty
-		}
-	}
-	
-	func startLoading(forSection section: Sections) {
-		DispatchQueue.main.async {
-			let indexPath = IndexPath(row: 0, section: section.rawValue)
-			let cell = self.tableView.cellForRow(at: indexPath)
-			(cell as? DetailsTableViewCell)?.spinner?.startAnimating()
-		}
-	}
-	
-	func stopLoading(forSection section: Sections) {
-		DispatchQueue.main.async {
-			let indexPath = IndexPath(row: 0, section: section.rawValue)
-			let cell = self.tableView.cellForRow(at: indexPath)
-			(cell as? DetailsTableViewCell)?.spinner?.stopAnimating()
-		}
-	}
+
+	// MARK: - Navigation
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "showItem" {

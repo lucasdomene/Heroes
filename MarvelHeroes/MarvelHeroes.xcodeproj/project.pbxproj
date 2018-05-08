@@ -49,6 +49,8 @@
 		3BBA9D6520A22610007753E4 /* DetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D6420A22610007753E4 /* DetailsViewControllerTests.swift */; };
 		3BBA9D6720A22C58007753E4 /* ItemDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D6620A22C58007753E4 /* ItemDetailViewControllerTests.swift */; };
 		3BBA9D6A20A22DD4007753E4 /* HeroAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D6920A22DD4007753E4 /* HeroAPITests.swift */; };
+		3BBA9D6D20A2329A007753E4 /* HeroServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D6C20A2329A007753E4 /* HeroServiceTests.swift */; };
+		3BBA9D7120A2354C007753E4 /* ImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D7020A2354C007753E4 /* ImageServiceTests.swift */; };
 		3BC2B331209F7F4E003D91F4 /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B330209F7F4E003D91F4 /* HeroService.swift */; };
 		3BC2B336209F84F8003D91F4 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B335209F84F8003D91F4 /* String+MD5.swift */; };
 		3BC2B33B209F921C003D91F4 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B339209F921C003D91F4 /* HeroTableViewCell.swift */; };
@@ -125,6 +127,8 @@
 		3BBA9D6420A22610007753E4 /* DetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerTests.swift; sourceTree = "<group>"; };
 		3BBA9D6620A22C58007753E4 /* ItemDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		3BBA9D6920A22DD4007753E4 /* HeroAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAPITests.swift; sourceTree = "<group>"; };
+		3BBA9D6C20A2329A007753E4 /* HeroServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroServiceTests.swift; sourceTree = "<group>"; };
+		3BBA9D7020A2354C007753E4 /* ImageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceTests.swift; sourceTree = "<group>"; };
 		3BC2B330209F7F4E003D91F4 /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
 		3BC2B332209F8494003D91F4 /* MarvelHeroes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarvelHeroes-Bridging-Header.h"; sourceTree = "<group>"; };
 		3BC2B335209F84F8003D91F4 /* String+MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 		3B124C44209E26DD00C86DA0 /* MarvelHeroesTests */ = {
 			isa = PBXGroup;
 			children = (
+				3BBA9D6B20A23286007753E4 /* Services */,
 				3BBA9D6820A22DC2007753E4 /* Networking */,
 				3BBA9D5B20A2226B007753E4 /* ViewControllers */,
 				3BBA9D5A20A2225A007753E4 /* Models */,
@@ -301,6 +306,15 @@
 				3BBA9D6920A22DD4007753E4 /* HeroAPITests.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		3BBA9D6B20A23286007753E4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3BBA9D6C20A2329A007753E4 /* HeroServiceTests.swift */,
+				3BBA9D7020A2354C007753E4 /* ImageServiceTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		3BC2B337209F91FD003D91F4 /* Views */ = {
@@ -548,10 +562,12 @@
 				3BBA9D5D20A222C5007753E4 /* ComicTests.swift in Sources */,
 				3BBA9D6320A224D7007753E4 /* StoryTests.swift in Sources */,
 				3BBA9D6A20A22DD4007753E4 /* HeroAPITests.swift in Sources */,
+				3BBA9D7120A2354C007753E4 /* ImageServiceTests.swift in Sources */,
 				3BBA9D5F20A224C0007753E4 /* EventTests.swift in Sources */,
 				3BBA9D5720A21D70007753E4 /* HeroTests.swift in Sources */,
 				3BBA9D6520A22610007753E4 /* DetailsViewControllerTests.swift in Sources */,
 				3BBA9D5920A220E7007753E4 /* ThumbnailTests.swift in Sources */,
+				3BBA9D6D20A2329A007753E4 /* HeroServiceTests.swift in Sources */,
 				3BBA9D6720A22C58007753E4 /* ItemDetailViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -147,4 +147,14 @@ class DetailsViewController: UIViewController {
 		}
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "showItem" {
+			let detailItem = sender as? (Detailable, UIImage?)
+			let destination = segue.destination as! ItemDetailViewController
+			destination.itemTitle = detailItem?.0.title
+			destination.itemDescription = detailItem?.0.description
+			destination.image = detailItem?.1 ?? #imageLiteral(resourceName: "imagePlaceholder")
+		}
+	}
+	
 }

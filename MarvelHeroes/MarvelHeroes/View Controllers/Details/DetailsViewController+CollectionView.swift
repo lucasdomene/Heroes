@@ -41,4 +41,11 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
 		}
 	}
 	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let detailItem = details[collectionView.tag][indexPath.row]
+		let cell = collectionView.cellForItem(at: indexPath) as? DetailsCollectionViewCell
+		let image = cell?.imageView.image
+		performSegue(withIdentifier: "showItem", sender: (detailItem, image))
+	}
+	
 }

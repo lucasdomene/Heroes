@@ -32,6 +32,7 @@
 		3B3E235620A0F4B100AD3D05 /* DetailsViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3E235520A0F4B100AD3D05 /* DetailsViewController+Delegate.swift */; };
 		3B3E235820A0F51C00AD3D05 /* DetailsViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3E235720A0F51C00AD3D05 /* DetailsViewController+CollectionView.swift */; };
 		3B3E235A20A0FCB600AD3D05 /* DetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3E235920A0FCB600AD3D05 /* DetailsCollectionViewCell.swift */; };
+		3B3E235D20A155ED00AD3D05 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3E235C20A155ED00AD3D05 /* ItemDetailViewController.swift */; };
 		3BC2B331209F7F4E003D91F4 /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B330209F7F4E003D91F4 /* HeroService.swift */; };
 		3BC2B336209F84F8003D91F4 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B335209F84F8003D91F4 /* String+MD5.swift */; };
 		3BC2B33B209F921C003D91F4 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B339209F921C003D91F4 /* HeroTableViewCell.swift */; };
@@ -91,6 +92,7 @@
 		3B3E235520A0F4B100AD3D05 /* DetailsViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+Delegate.swift"; sourceTree = "<group>"; };
 		3B3E235720A0F51C00AD3D05 /* DetailsViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		3B3E235920A0FCB600AD3D05 /* DetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		3B3E235C20A155ED00AD3D05 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		3BC2B330209F7F4E003D91F4 /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
 		3BC2B332209F8494003D91F4 /* MarvelHeroes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarvelHeroes-Bridging-Header.h"; sourceTree = "<group>"; };
 		3BC2B335209F84F8003D91F4 /* String+MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
@@ -227,6 +229,14 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		3B3E235B20A155BC00AD3D05 /* Item Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3B3E235C20A155ED00AD3D05 /* ItemDetailViewController.swift */,
+			);
+			path = "Item Detail";
+			sourceTree = "<group>";
+		};
 		3BC2B337209F91FD003D91F4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +259,7 @@
 		3BC2B33D209FA038003D91F4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3B3E235B20A155BC00AD3D05 /* Item Detail */,
 				3B3E234220A0ACFE00AD3D05 /* Details */,
 				3BC2B33E209FA043003D91F4 /* Heroes */,
 			);
@@ -440,6 +451,7 @@
 				3B3E234420A0AD1700AD3D05 /* DetailsViewController.swift in Sources */,
 				3B124C62209E2A4800C86DA0 /* Thumbnail.swift in Sources */,
 				3BC2B343209FA595003D91F4 /* ImageService.swift in Sources */,
+				3B3E235D20A155ED00AD3D05 /* ItemDetailViewController.swift in Sources */,
 				3B124C65209E2AA800C86DA0 /* HeroAPI.swift in Sources */,
 				3B3E234A20A0D42600AD3D05 /* Comic.swift in Sources */,
 				3B124C60209E29EE00C86DA0 /* Hero.swift in Sources */,

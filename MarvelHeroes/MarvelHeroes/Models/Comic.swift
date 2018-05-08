@@ -11,6 +11,7 @@ import Foundation
 protocol Detailable {
 	var id: Int { get set }
 	var title: String { get set }
+	var description: String { get set }
 	var thumbnail: Thumbnail? { get set }
 }
 
@@ -18,6 +19,7 @@ struct Comic: Detailable {
 	
 	var id: Int
 	var title: String
+	var description: String
 	var thumbnail: Thumbnail?
 	
 }
@@ -26,7 +28,8 @@ extension Comic: Parseable {
 	
 	init?(json: [String: Any]) {
 		guard let id = json["id"] as? Int,
-			let title = json["title"] as? String else {
+			let title = json["title"] as? String,
+			let description = json["description"] as? String else {
 				return nil
 		}
 		
@@ -36,7 +39,7 @@ extension Comic: Parseable {
 			thumbnail = downloadedThumbnail
 		}
 		
-		self.init(id: id, title: title, thumbnail: thumbnail)
+		self.init(id: id, title: title, description: description, thumbnail: thumbnail)
 	}
 	
 }

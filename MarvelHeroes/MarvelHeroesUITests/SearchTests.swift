@@ -20,11 +20,17 @@ class SearchTests: XCTestCase {
 	}
 	
 	func testSearch() {
+		// get search bar
 		let searchBar = app.otherElements["searchBar"]
+		
+		// tap and type
 		searchBar.tap()
 		searchBar.typeText("hulk")
+		
+		// tap search
 		app.keyboards.buttons["Search"].tap()
 		
+		// wait to check if got results
 		let cells = app.tables["HeroesTableView"].cells
 		let notEmpty = NSPredicate(format: "count > 0")
 		expectation(for: notEmpty, evaluatedWith: cells, handler: nil)

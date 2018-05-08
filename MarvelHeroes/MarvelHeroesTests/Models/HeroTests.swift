@@ -14,15 +14,16 @@ class HeroTests: XCTestCase {
 	var heroID: Int!
 	var heroName: String!
 	var thumbnail: Thumbnail!
-	var json: [String: Any] = ["id": 100,
-							   "name": "Hulk",
-							   "thumbnail": ["path": "path", 				"extension": "ext"]
-							  ]
+	var json: [String: Any]!
 	
 	override func setUp() {
 		heroID = 100
 		heroName = "Hulk"
 		thumbnail = Thumbnail(path: "path", imageExtension: "ext")
+		json = ["id": 100,
+				"name": "Hulk",
+				"thumbnail": ["path": "path", 				"extension": "ext"]
+		]
 	}
 	
 	func testHeroCreationWithDefaultInitializer() {

@@ -12,6 +12,7 @@ class DetailsViewController: UIViewController {
 	
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var favoriteImageView: UIImageView!
 	
 	var hero: Hero!
 	var details = [[Detailable]]()
@@ -59,6 +60,23 @@ class DetailsViewController: UIViewController {
 		initDetails()
 		tableView.reloadData()
 		navigationItem.title = hero.name
+		configureFavoriteButton()
+		setFavorite(FavoritesService.isFavorite(hero))
+	}
+	
+	func configureFavoriteButton() {
+		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(favoritePressed))
+		favoriteImageView.addGestureRecognizer(tapGesture)
+	}
+	
+	@objc func favoritePressed() {
+		let isFavorite = FavoritesService.isFavorite(hero)
+		isFavorite ? FavoritesService.remove(hero) : FavoritesService.add(hero)
+		setFavorite(!isFavorite)
+	}
+	
+	func setFavorite(_ isFavorite: Bool) {
+		favoriteImageView.image = isFavorite ? #imageLiteral(resourceName: "favorite_highlighted") : #imageLiteral(resourceName: "favorite_normal")
 	}
 	
 	func initDetails() {

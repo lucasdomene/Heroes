@@ -41,6 +41,11 @@ class HeroesViewController: UIViewController, UINavigationControllerDelegate, Lo
 		navigationController?.delegate = self
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		tableView.reloadData()
+	}
+	
 	func registerCell() {
 		let nib = UINib(nibName: "HeroTableViewCell", bundle: nil)
 		tableView.register(nib, forCellReuseIdentifier: "HeroCell")

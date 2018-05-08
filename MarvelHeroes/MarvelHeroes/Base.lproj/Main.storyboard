@@ -173,10 +173,19 @@
                                     <outlet property="delegate" destination="kfW-UB-9Wy" id="4Dx-IA-zXc"/>
                                 </connections>
                             </tableView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite_normal" translatesAutoresizingMaskIntoConstraints="NO" id="mAx-i6-3qU">
+                                <rect key="frame" x="305" y="294" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="f8j-Lo-8SV"/>
+                                    <constraint firstAttribute="height" constant="50" id="nxB-nj-pXG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="OqN-mP-gOu" firstAttribute="top" secondItem="mAx-i6-3qU" secondAttribute="bottom" constant="20" id="BVE-US-Rp5"/>
                             <constraint firstItem="N2V-cK-BNG" firstAttribute="bottom" secondItem="OqN-mP-gOu" secondAttribute="bottom" id="CAE-oS-c4o"/>
+                            <constraint firstItem="N2V-cK-BNG" firstAttribute="trailing" secondItem="mAx-i6-3qU" secondAttribute="trailing" constant="20" id="cPn-0r-GO1"/>
                             <constraint firstItem="BCG-bz-Ukd" firstAttribute="leading" secondItem="N2V-cK-BNG" secondAttribute="leading" id="ezW-Ov-HwG"/>
                             <constraint firstItem="OqN-mP-gOu" firstAttribute="leading" secondItem="N2V-cK-BNG" secondAttribute="leading" id="hyn-ha-fRh"/>
                             <constraint firstItem="BCG-bz-Ukd" firstAttribute="top" secondItem="N2V-cK-BNG" secondAttribute="top" id="ovp-M7-Td8"/>
@@ -187,6 +196,7 @@
                         <viewLayoutGuide key="safeArea" id="N2V-cK-BNG"/>
                     </view>
                     <connections>
+                        <outlet property="favoriteImageView" destination="mAx-i6-3qU" id="Ehu-Sr-kxk"/>
                         <outlet property="imageView" destination="BCG-bz-Ukd" id="1Rk-dO-tgD"/>
                         <outlet property="tableView" destination="OqN-mP-gOu" id="7Eg-kG-hnX"/>
                         <segue destination="I1F-Mq-3J0" kind="showDetail" identifier="showItem" id="5QM-eK-xUf"/>
@@ -297,6 +307,7 @@
     </scenes>
     <resources>
         <image name="close" width="50" height="50"/>
+        <image name="favorite_normal" width="50" height="50"/>
         <image name="favorites" width="50" height="50"/>
         <image name="imagePlaceholder" width="250" height="250"/>
     </resources>

@@ -20,7 +20,7 @@ extension DetailsViewController: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "detailsCell", for: indexPath) as! DetailsTableViewCell
-		cell.configureSpinner()
+		cell.emptyLabel.isHidden = !(completed && details[indexPath.section].isEmpty)
 		return cell
 	}
 	

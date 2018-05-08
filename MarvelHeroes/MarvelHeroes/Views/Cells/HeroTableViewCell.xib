@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="328" height="129.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OU4-NA-S9G">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="OU4-NA-S9G">
                         <rect key="frame" x="0.0" y="0.0" width="328" height="129.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1r-Rn-jDT">
@@ -61,5 +61,6 @@
     </objects>
     <resources>
         <image name="favorite_normal" width="50" height="50"/>
+        <image name="imagePlaceholder" width="250" height="250"/>
     </resources>
 </document>

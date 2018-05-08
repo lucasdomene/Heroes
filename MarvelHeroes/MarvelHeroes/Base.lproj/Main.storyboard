@@ -116,7 +116,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TRo-yH-A9o">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="TRo-yH-A9o">
                                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
                                                                     </imageView>
                                                                 </subviews>
@@ -133,17 +133,38 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLw-du-TTw">
+                                                    <rect key="frame" x="136" y="64" width="103" height="23"/>
+                                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KjR-bJ-a4A">
+                                                    <rect key="frame" x="169" y="57" width="37" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="3yh-Vb-LOX" secondAttribute="trailing" id="24L-K7-4sT"/>
                                                 <constraint firstItem="3yh-Vb-LOX" firstAttribute="leading" secondItem="Cn3-hd-Imo" secondAttribute="leading" id="7oY-gS-RgM"/>
                                                 <constraint firstItem="3yh-Vb-LOX" firstAttribute="top" secondItem="Cn3-hd-Imo" secondAttribute="top" id="NVl-JB-AEd"/>
+                                                <constraint firstItem="TLw-du-TTw" firstAttribute="centerX" secondItem="Cn3-hd-Imo" secondAttribute="centerX" id="aM5-gi-Aj9"/>
+                                                <constraint firstItem="TLw-du-TTw" firstAttribute="centerY" secondItem="Cn3-hd-Imo" secondAttribute="centerY" id="ifH-9A-QOE"/>
                                                 <constraint firstAttribute="bottom" secondItem="3yh-Vb-LOX" secondAttribute="bottom" id="zgL-l1-pNM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="collectionView" destination="3yh-Vb-LOX" id="iQK-wo-cII"/>
+                                            <outlet property="emptyLabel" destination="TLw-du-TTw" id="kDe-HE-RLI"/>
+                                            <outlet property="spinner" destination="KjR-bJ-a4A" id="II9-Oy-31r"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -200,5 +221,6 @@
     </scenes>
     <resources>
         <image name="favorites" width="50" height="50"/>
+        <image name="imagePlaceholder" width="250" height="250"/>
     </resources>
 </document>

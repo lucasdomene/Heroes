@@ -13,6 +13,10 @@ extension DetailsViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 		guard let detailsTableViewCell = cell as? DetailsTableViewCell else { return }
 		detailsTableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.section)
+		
+		if !didFetch[indexPath.section] {
+			fetchDetails(forSection: Sections(rawValue: indexPath.section))
+		}
 	}
 	
 	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

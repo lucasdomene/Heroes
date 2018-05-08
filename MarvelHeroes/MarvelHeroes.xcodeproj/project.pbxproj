@@ -42,6 +42,7 @@
 		3BBA9D5520A217A2007753E4 /* HeroViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D5420A217A2007753E4 /* HeroViewControllerTests.swift */; };
 		3BBA9D5720A21D70007753E4 /* HeroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D5620A21D70007753E4 /* HeroTests.swift */; };
 		3BBA9D5920A220E7007753E4 /* ThumbnailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D5820A220E7007753E4 /* ThumbnailTests.swift */; };
+		3BBA9D5D20A222C5007753E4 /* ComicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D5C20A222C5007753E4 /* ComicTests.swift */; };
 		3BC2B331209F7F4E003D91F4 /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B330209F7F4E003D91F4 /* HeroService.swift */; };
 		3BC2B336209F84F8003D91F4 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B335209F84F8003D91F4 /* String+MD5.swift */; };
 		3BC2B33B209F921C003D91F4 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B339209F921C003D91F4 /* HeroTableViewCell.swift */; };
@@ -111,6 +112,7 @@
 		3BBA9D5420A217A2007753E4 /* HeroViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewControllerTests.swift; sourceTree = "<group>"; };
 		3BBA9D5620A21D70007753E4 /* HeroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTests.swift; sourceTree = "<group>"; };
 		3BBA9D5820A220E7007753E4 /* ThumbnailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailTests.swift; sourceTree = "<group>"; };
+		3BBA9D5C20A222C5007753E4 /* ComicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicTests.swift; sourceTree = "<group>"; };
 		3BC2B330209F7F4E003D91F4 /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
 		3BC2B332209F8494003D91F4 /* MarvelHeroes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarvelHeroes-Bridging-Header.h"; sourceTree = "<group>"; };
 		3BC2B335209F84F8003D91F4 /* String+MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			children = (
 				3BBA9D5620A21D70007753E4 /* HeroTests.swift */,
 				3BBA9D5820A220E7007753E4 /* ThumbnailTests.swift */,
+				3BBA9D5C20A222C5007753E4 /* ComicTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BBA9D5520A217A2007753E4 /* HeroViewControllerTests.swift in Sources */,
+				3BBA9D5D20A222C5007753E4 /* ComicTests.swift in Sources */,
 				3BBA9D5720A21D70007753E4 /* HeroTests.swift in Sources */,
 				3BBA9D5920A220E7007753E4 /* ThumbnailTests.swift in Sources */,
 			);

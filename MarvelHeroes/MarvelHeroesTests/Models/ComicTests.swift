@@ -25,7 +25,8 @@ class ComicTests: XCTestCase {
 		json = ["id": 100,
 				"title": "Comic",
 				"description": "ComicDescription",
-				"thumbnail": ["path": "path", 				"extension": "ext"]
+				"thumbnail": ["path": "path",
+							  "extension": "ext"]
 			   ]
 	}
 	
@@ -38,7 +39,7 @@ class ComicTests: XCTestCase {
 		XCTAssertEqual(comic.thumbnail?.imageExtension, thumbnail.imageExtension)
 	}
 	
-	func testThumbnailCreationWithJSON() {
+	func testComicCreationWithJSON() {
 		let comic = Comic(json: json)
 		XCTAssertEqual(comic?.id, id)
 		XCTAssertEqual(comic?.title, title)

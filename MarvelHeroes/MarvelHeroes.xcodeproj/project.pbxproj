@@ -53,6 +53,7 @@
 		3BBA9D7120A2354C007753E4 /* ImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D7020A2354C007753E4 /* ImageServiceTests.swift */; };
 		3BBA9D7320A238CD007753E4 /* FavoriteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D7220A238CD007753E4 /* FavoriteServiceTests.swift */; };
 		3BBA9D7520A23AA9007753E4 /* DetailsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D7420A23AA9007753E4 /* DetailsServiceTests.swift */; };
+		3BBA9D7720A23CFD007753E4 /* RequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA9D7620A23CFD007753E4 /* RequestTest.swift */; };
 		3BC2B331209F7F4E003D91F4 /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B330209F7F4E003D91F4 /* HeroService.swift */; };
 		3BC2B336209F84F8003D91F4 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B335209F84F8003D91F4 /* String+MD5.swift */; };
 		3BC2B33B209F921C003D91F4 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2B339209F921C003D91F4 /* HeroTableViewCell.swift */; };
@@ -133,6 +134,7 @@
 		3BBA9D7020A2354C007753E4 /* ImageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceTests.swift; sourceTree = "<group>"; };
 		3BBA9D7220A238CD007753E4 /* FavoriteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteServiceTests.swift; sourceTree = "<group>"; };
 		3BBA9D7420A23AA9007753E4 /* DetailsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsServiceTests.swift; sourceTree = "<group>"; };
+		3BBA9D7620A23CFD007753E4 /* RequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTest.swift; sourceTree = "<group>"; };
 		3BC2B330209F7F4E003D91F4 /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
 		3BC2B332209F8494003D91F4 /* MarvelHeroes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarvelHeroes-Bridging-Header.h"; sourceTree = "<group>"; };
 		3BC2B335209F84F8003D91F4 /* String+MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				3BBA9D6920A22DD4007753E4 /* HeroAPITests.swift */,
+				3BBA9D7620A23CFD007753E4 /* RequestTest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				3BBA9D6120A224CB007753E4 /* SerieTests.swift in Sources */,
 				3BBA9D5520A217A2007753E4 /* HeroViewControllerTests.swift in Sources */,
 				3BBA9D5D20A222C5007753E4 /* ComicTests.swift in Sources */,
+				3BBA9D7720A23CFD007753E4 /* RequestTest.swift in Sources */,
 				3BBA9D6320A224D7007753E4 /* StoryTests.swift in Sources */,
 				3BBA9D6A20A22DD4007753E4 /* HeroAPITests.swift in Sources */,
 				3BBA9D7120A2354C007753E4 /* ImageServiceTests.swift in Sources */,

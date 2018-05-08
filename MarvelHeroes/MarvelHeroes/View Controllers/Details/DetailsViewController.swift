@@ -74,8 +74,7 @@ class DetailsViewController: UIViewController {
 			DetailsService.fetchDetails(type: Comic.self, heroID: String(hero.id)) { result in
 				switch result {
 				case .success(let comics):
-					self.details[section.rawValue] = comics
-					self.updateCell(forSection: section)
+					self.handleSuccess(withItems: comics, forSection: section)
 				case .failure(let error):
 					print(error)
 				}
@@ -86,8 +85,7 @@ class DetailsViewController: UIViewController {
 			DetailsService.fetchDetails(type: Event.self, heroID: String(hero.id)) { result in
 				switch result {
 				case .success(let events):
-					self.details[section.rawValue] = events
-					self.updateCell(forSection: section)
+					self.handleSuccess(withItems: events, forSection: section)
 				case .failure(let error):
 					print(error)
 				}
@@ -98,8 +96,7 @@ class DetailsViewController: UIViewController {
 			DetailsService.fetchDetails(type: Story.self, heroID: String(hero.id)) { result in
 				switch result {
 				case .success(let stories):
-					self.details[section.rawValue] = stories
-					self.updateCell(forSection: section)
+					self.handleSuccess(withItems: stories, forSection: section)
 				case .failure(let error):
 					print(error)
 				}
@@ -110,8 +107,7 @@ class DetailsViewController: UIViewController {
 			DetailsService.fetchDetails(type: Serie.self, heroID: String(hero.id)) { result in
 				switch result {
 				case .success(let series):
-					self.details[section.rawValue] = series
-					self.updateCell(forSection: section)
+					self.handleSuccess(withItems: series, forSection: section)
 				case .failure(let error):
 					print(error)
 				}
@@ -119,6 +115,11 @@ class DetailsViewController: UIViewController {
 				self.didFetch[section.rawValue] = true
 			}
 		}
+	}
+	
+	func handleSuccess(withItems items: [Detailable], forSection section: Sections) {
+		self.details[section.rawValue] = items
+		self.updateCell(forSection: section)
 	}
 	
 	func updateCell(forSection section: Sections) {

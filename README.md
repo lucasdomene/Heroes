@@ -78,4 +78,4 @@ Tested the following cases:
 
 *	Improve persistence for favorites. As for now, the performance isn't great, since it's saving and retrieving the entire characters array at once when saving or deleting. Also, could stop using FileManager and  use something more scalable, as CoreData.
 *	Fix asynchronous tasks for details view. As it is, some conflicts are occurring.
-*	Improving app layout, no need to say that.
+*	Improving app layout, no need to say that. :neutral_face:
